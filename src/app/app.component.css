@@ -1,4 +1,9 @@
 * {
-    width: 70%;
     margin: 0 auto;
+    min-height: 100vh;
+}
+
+.footer {
+  position: sticky;
+  top: 100%;
 }
