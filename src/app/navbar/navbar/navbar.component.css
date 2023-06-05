@@ -22,7 +22,7 @@
   min-width: 12rem;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 405px) {
   .navbar {
     height: 6rem;
   }
