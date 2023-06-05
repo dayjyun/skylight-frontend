@@ -7,10 +7,11 @@ import { NavbarModule } from 'src/app/navbar/navbar.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { FlightsModule } from './flights/flights.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
-  imports: [BrowserModule, AppRoutingModule, NavbarModule, HeaderModule, FooterModule],
+  imports: [BrowserModule, AppRoutingModule, NavbarModule, HeaderModule, FooterModule, FlightsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
