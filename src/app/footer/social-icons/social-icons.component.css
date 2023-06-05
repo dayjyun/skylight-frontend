@@ -1,0 +1,34 @@
+.about-me{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 7rem;
+}
+
+.about-me-text {
+  color: white;
+}
+
+.fa-brands {
+  padding: 0 0.25rem;
+}
+
+.fa-user,
+.fa-github,
+.fa-linkedin {
+  color: white;
+  font-size: 2rem;
+}
+
+.fa-user:hover {
+    color: #71c75e
+}
+
+.fa-github:hover {
+  color: #a045ac;
+}
+
+.fa-linkedin:hover {
+  color: #0b66c3;
+}
