@@ -6,3 +6,13 @@ input {
     text-align: center;
     padding: 1rem;
 }
+
+@media screen and (max-width: 778px) {
+    .search-container {
+        border: 2px solid red;
+    }
+
+    .col {
+        margin: .5rem auto;
+    }
+}
