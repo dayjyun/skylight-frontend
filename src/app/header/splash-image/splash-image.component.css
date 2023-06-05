@@ -12,3 +12,15 @@ img {
     height: 30rem;
     object-fit: cover;
 }
+
+.text-bg-dark {
+    min-width: 20rem;
+}
+
+.card-img-overlay {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+    margin: 18rem auto;
+}
