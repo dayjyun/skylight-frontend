@@ -6,9 +6,10 @@ import { AppComponent } from './app.component';
 import { NavbarModule } from 'src/app/navbar/navbar.module';
 import { HeaderModule } from './header/header.module';
 import { FooterModule } from './footer/footer.module';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, PageNotFoundComponent],
   imports: [BrowserModule, AppRoutingModule, NavbarModule, HeaderModule, FooterModule],
   providers: [],
   bootstrap: [AppComponent],
