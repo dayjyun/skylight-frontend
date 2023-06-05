@@ -1,14 +1,33 @@
 <div class="search-container">
-    <div class="row d-flex">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="From" aria-label="From">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Destination" aria-label="Destination">
+  <div class="row d-flex">
+    <div class="col" (input)="(filteredOriginAirports)">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="From"
+        aria-label="From"
+        [(ngModel)]="originSearchBarText"
+      />
     </div>
+    <div class="col" (input)="(filteredDestinationAirports)">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Destination"
+        aria-label="Destination"
+        [(ngModel)]="destinationSearchBarText"
+      />
     </div>
-    <div class="col-12 d-flex align-self-lg-end d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary">LET'S FLY</button>
-    </div>
+  </div>
+  <div class="col-12 d-flex align-self-lg-end d-flex justify-content-center">
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!originSearchBarText || !destinationSearchBarText"
+      (click)="search()"
+    >
+      LET'S FLY
+    </button>
+  </div>
 </div>
 <!-- display list of cities as user types -->

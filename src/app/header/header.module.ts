@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { SplashImageComponent } from './splash-image/splash-image.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-
+import { FormsModule } from '@angular/forms'
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     SearchBarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   exports: [
     HeaderComponent
