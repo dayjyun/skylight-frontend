@@ -1,45 +1,56 @@
-<div class="row">
-  <div class="col-md-6 mx-auto">
-    <div class="card rounded-0">
-      <div class="card-header">
-        <h3 class="mb-0">Register</h3>
-      </div>
-      <div class="card-body">
-        <form action="" class="form">
-          <div class="form-group">
-            <label for="">Name</label>
-            <input
-              [(ngModel)]="registerUserData.name"
-              name="name"
-              type="text"
-              class="form-control rounded-0"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="">Email</label>
-            <input
-              [(ngModel)]="registerUserData.email"
-              name="email"
-              type="text"
-              class="form-control rounded-0"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="">Password</label>
-            <input
-              [(ngModel)]="registerUserData.password"
-              name="password"
-              type="password"
-              class="form-control rounded-0"
-              required
-            />
-          </div>
-          <div class="pt-4 float-end">
-            <button (click)="registerUser()" type="button" class="btn btn-primary">Register</button>
-          </div>
-        </form>
+<div class="sign-up-container d-flex justify-content-center align-items-center flex-column">
+  <figure class="figure text-center">
+    <img src="https://skylight-project.s3.amazonaws.com/skylight.png" class="figure-img img-fluid rounded" alt="Your Window To The Sky" />
+    <figcaption class="figure-caption">
+      Your Ticket To The Sky
+    </figcaption>
+  </figure>
+
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Sign Up</h3>
+        </div>
+        <div class="card-body">
+          <form action="" class="form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <small *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger ml-2">
+                <div *ngIf="name.errors && name.errors['required']">
+                  Name is required.
+                </div>
+              </small>
+              <input [(ngModel)]="registerUserData.name" name="name" type="text" class="form-control rounded-0" [class.is-invalid]="name.invalid && (name.dirty || name.touched)" required #name="ngModel" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <small *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger ml-2">
+                <div *ngIf="email.errors && email.errors['required']">
+                  Email is required.
+                </div>
+                <div *ngIf="email.errors && email.errors['email']">
+                  Invalid email format.
+                </div>
+              </small>
+              <input [(ngModel)]="registerUserData.email" name="email" type="text" class="form-control rounded-0" [class.is-invalid]="email.invalid && (email.dirty || email.touched)" required email #email="ngModel" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <small *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger ml-2">
+                <div *ngIf="password.errors && password.errors['required']">
+                  Password is required.
+                </div>
+              </small>
+              <input [(ngModel)]="registerUserData.password" name="password" type="password" class="form-control rounded-0" [class.is-invalid]="password.invalid && (password.dirty || password.touched)" required #password="ngModel" />
+            </div>
+            <div class="pt-4 float-end">
+              <button (click)="registerUser()" type="button" class="btn btn-primary">
+                Register
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   </div>

@@ -6,13 +6,6 @@
   z-index: 9999;
 }
 
-/* .navbar.bg-body-tertiary {
-    background-image: url("https://skylight-project.s3.amazonaws.com/frontend/sky.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 .container-fluid {
   width: 75%;
   margin: 0 auto;
