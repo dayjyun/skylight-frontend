@@ -16,11 +16,14 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  /**
+   * Logs in a registered user through the user service.
+   */
   loginUser() {
     // Clear previous error messages
     this.errorMessage = '';
 
-    //// Perform form validation
+    // Perform form validation
     if (
       !this.loginUserData.email ||
       !this.loginUserData.password

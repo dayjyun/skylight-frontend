@@ -18,7 +18,6 @@ export class SignUpComponent implements OnInit {
 
   /**
    * Registers a new user by creating a user account through the user service.
-   * Redirects the
    */
   registerUser() {
     // Clear previous error messages

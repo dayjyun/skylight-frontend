@@ -6,7 +6,7 @@
           <h3 class="mb-0">Log In</h3>
         </div>
         <div class="card-body">
-          <form action="" class="form">
+          <form action="" class="form" #loginForm="ngForm">
             <div class="form-group">
               <label for="email">Email</label>
               <small *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger ml-2">
@@ -29,7 +29,7 @@
               <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" [class.is-invalid]="password.invalid && (password.dirty || password.touched)" required #password="ngModel" />
             </div>
             <div class="pt-4 float-end">
-              <button (click)="loginUser()" type="button" class="btn btn-primary">
+              <button (click)="loginUser()" type="button" class="btn btn-primary" [disabled]="loginForm.invalid">
                 Log In
               </button>
             </div>
