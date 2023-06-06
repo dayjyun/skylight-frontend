@@ -2,44 +2,59 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 interface User {
-  name: string,
-  email: string,
-  password: string,
-  isAdmin: boolean
+  name: string;
+  email: string;
+  password: string;
+  isAdmin: boolean;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UsersService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
+  /**
+   *Functionality: User creates account (Public)
+   * Path: /api/auth/register
+   */
   createUser(userObj: User) {
-    // /api/auth/register
+    // return this.http.post(``);
   }
 
-  loginUser() {
-    // /api/auth/login
-  }
+  /**
+   *Functionality: User logs into of account (Public)
+   * Path: /api/auth/login
+   */
+  loginUser() {}
 
-  getMyProfile() {
-    // /api/myProfile
-  }
+  /**
+   * Functionality: Returns logged-in user’s account (Private)
+   * Path: /api/myProfile
+   */
+  getMyProfile() {}
 
-  updateMyProfile() {
-    // /api/myProfile
-  }
+  /**
+   * Functionality: Edit user account (Private)
+   * Path: /api/myProfile
+   */
+  updateMyProfile() {}
 
-  getMyTickets() {
-    // /api/myProfile/myTickets
-  }
+  /**
+   * Functionality: Returns a list of flights the user booked	(Private)
+   * Path: /api/myProfile/myFlights
+   */
+  getMyTickets() {}
 
-  flyTheSkies() {
-    // /api/myProfile/flyTheSkies
-  }
+  /**
+   * Functionality: User submits request to become a pilot (Private)
+   * Path: /api/myProfile/flyTheSkies
+   */
+  flyTheSkies() {}
 
-  getScheduledFlights() {
-    // /api/myProfile/air
-  }
+  /**
+   * Functionality: Returns a list of flight the admin has submitted	(Private)
+   * Path: /api/myProfile/air
+   */
+  getScheduledFlights() {}
 }
