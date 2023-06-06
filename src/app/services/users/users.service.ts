@@ -20,8 +20,8 @@ export class UsersService {
    * @param userObject is the data for the user being registered
    * @return the data for the newly registered user
    */
-  createUser(userObj: User) {
-    // return this.http.post(``);
+  createUser(userObj: any) {
+    return this.http.post<any>(`http://localhost:8080/api/auth/register`, userObj);
   }
 
   /**

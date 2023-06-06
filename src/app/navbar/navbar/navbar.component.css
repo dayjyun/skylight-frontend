@@ -22,9 +22,10 @@
   min-width: 12rem;
 }
 
-@media screen and (max-width: 405px) {
+@media screen and (max-width: 510px) {
   .navbar {
-    height: 6rem;
+    height: 8rem;
+
   }
   .container-fluid {
     display: flex;
