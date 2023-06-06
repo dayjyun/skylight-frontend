@@ -10,6 +10,7 @@ import { MyProfileComponent } from './my-profile/my-profile.component';
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  providers: []
 })
 export class MyProfileModule { }

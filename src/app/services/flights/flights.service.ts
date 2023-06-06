@@ -12,7 +12,9 @@ export class FlightsService {
    * Path: /api/flights
    * @return a list of flights
    */
-  getAllFlights() {}
+  getAllFlights() {
+    return this.http.get(`http://localhost:8080/api/flights`)
+  }
 
   /**
    * Functionality: Returns flight details (Public)
@@ -20,7 +22,9 @@ export class FlightsService {
    * @param flightId is the flight ID to search by
    * @return a Flight
    */
-  getFlightById(flightId: number) {}
+  getFlightById(flightId: number) {
+    return this.http.get(`http://localhost:8080/api/flights/${flightId}`);
+  }
 
   /**
    * Functionality: Admin deletes flight details (Private)
@@ -28,7 +32,9 @@ export class FlightsService {
    * @param flightId is the flight ID to search by
    * @return the deleted flight data
    */
-  deleteFlightById(flightId: number) {}
+  deleteFlightById(flightId: number) {
+    return this.http.delete(`http://localhost:8080/api/flights/${flightId}`);
+  }
 
   /**
    * Functionality: Get all tickets available for flight (Public)
@@ -36,7 +42,9 @@ export class FlightsService {
    * @param flightId is the flight ID to search by
    * @return a list of tickets
    */
-  getFlightTickets(flightId: number) {}
+  getFlightTickets(flightId: number) {
+    return this.http.get(`http://localhost:8080/api/flights/${flightId}/tickets`);
+  }
 
   /**
    * Functionality: Admin creates ticket for flight (Public | Private)
@@ -44,5 +52,7 @@ export class FlightsService {
    * @param flightId is the flight ID to search by
    * @return newly created ticket
    */
-  createTicketForFlight(flightId: number){}
+  createTicketForFlight(flightId: number, flightData: any){
+    return this.http.post(`http://localhost:8080/api/flights/${flightId}`, flightData);
+  }
 }

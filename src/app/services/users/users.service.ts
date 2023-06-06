@@ -20,8 +20,8 @@ export class UsersService {
    * @param userObject is the data for the user being registered
    * @return the data for the newly registered user
    */
-  createUser(userObj: any) {
-    return this.http.post<any>(`http://localhost:8080/api/auth/register`, userObj);
+  createUser(userData: any) {
+    return this.http.post<any>(`http://localhost:8080/api/auth/register`, userData);
   }
 
   /**
@@ -30,8 +30,8 @@ export class UsersService {
    * @param loginRequest user credentials (email, password)
    * @return JWT key
    */
-  loginUser(userObj: any) {
-    return this.http.post<any>(`http://localhost:8080/api/auth/login`, userObj);
+  loginUser(userData: any) {
+    return this.http.post<any>(`http://localhost:8080/api/auth/login`, userData);
   }
 
   /**

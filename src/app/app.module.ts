@@ -11,6 +11,8 @@ import { FlightsModule } from './flights/flights.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { MainPageModule } from './main-page/main-page.module';
 import { ButtonsModule } from './buttons/buttons.module';
+import { MyProfileModule } from './my-profile/my-profile.module';
+import { UsersService } from './services/users/users.service';
 
 
 @NgModule({
@@ -24,9 +26,10 @@ import { ButtonsModule } from './buttons/buttons.module';
     MainPageModule,
     FooterModule,
     FlightsModule,
-    ButtonsModule
+    ButtonsModule,
+    MyProfileModule
   ],
-  providers: [],
+  providers: [UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
