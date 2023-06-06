@@ -34,6 +34,9 @@ export class TicketsService {
    * @return the booked ticket data
    */
   bookFlight(ticketId: number) {
-    return this.http.put(`http://localhost:8080/api/tickets/${ticketId}/bookFlight`, { });
+    return this.http.put(
+      `http://localhost:8080/api/tickets/${ticketId}/bookFlight`,
+      {}
+    );
   }
 }

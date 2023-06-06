@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TicketInfoComponent } from './ticket-info/ticket-info.component';
 import { TicketsListComponent } from './tickets-list/tickets-list.component';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 
 
 
 @NgModule({
   declarations: [
     TicketsListComponent,
-    TicketInfoComponent
+    TicketDetailsComponent
   ],
   imports: [
     CommonModule

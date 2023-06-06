@@ -21,7 +21,10 @@ export class UsersService {
    * @return the data for the newly registered user
    */
   createUser(userData: any) {
-    return this.http.post<any>(`http://localhost:8080/api/auth/register`, userData);
+    return this.http.post<any>(
+      `http://localhost:8080/api/auth/register`,
+      userData
+    );
   }
 
   /**
@@ -31,7 +34,10 @@ export class UsersService {
    * @return JWT key
    */
   loginUser(userData: any) {
-    return this.http.post<any>(`http://localhost:8080/api/auth/login`, userData);
+    return this.http.post<any>(
+      `http://localhost:8080/api/auth/login`,
+      userData
+    );
   }
 
   /**
@@ -40,7 +46,7 @@ export class UsersService {
    * @return Logged-in user's data
    */
   getMyProfile() {
-    return this.http.get('http://localhost:8080/api/myProfile')
+    return this.http.get('http://localhost:8080/api/myProfile');
   }
 
   /**

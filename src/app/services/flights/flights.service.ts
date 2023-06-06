@@ -13,7 +13,7 @@ export class FlightsService {
    * @return a list of flights
    */
   getAllFlights() {
-    return this.http.get(`http://localhost:8080/api/flights`)
+    return this.http.get(`http://localhost:8080/api/flights`);
   }
 
   /**
@@ -43,7 +43,9 @@ export class FlightsService {
    * @return a list of tickets
    */
   getFlightTickets(flightId: number) {
-    return this.http.get(`http://localhost:8080/api/flights/${flightId}/tickets`);
+    return this.http.get(
+      `http://localhost:8080/api/flights/${flightId}/tickets`
+    );
   }
 
   /**
@@ -52,7 +54,10 @@ export class FlightsService {
    * @param flightId is the flight ID to search by
    * @return newly created ticket
    */
-  createTicketForFlight(flightId: number, flightData: any){
-    return this.http.post(`http://localhost:8080/api/flights/${flightId}`, flightData);
+  createTicketForFlight(flightId: number, flightData: any) {
+    return this.http.post(
+      `http://localhost:8080/api/flights/${flightId}`,
+      flightData
+    );
   }
 }

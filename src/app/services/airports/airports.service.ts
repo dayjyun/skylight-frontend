@@ -83,6 +83,8 @@ export class AirportsService {
    * @return list of flights
    */
   getDepartures(airportId: number) {
-    return this.http.get(`http://localhost:8080/api/airports/${airportId}/departures`);
+    return this.http.get(
+      `http://localhost:8080/api/airports/${airportId}/departures`
+    );
   }
 }

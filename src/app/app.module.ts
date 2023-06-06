@@ -12,8 +12,10 @@ import { NavbarModule } from './navbar/navbar.module';
 import { MainPageModule } from './main-page/main-page.module';
 import { ButtonsModule } from './buttons/buttons.module';
 import { MyProfileModule } from './my-profile/my-profile.module';
+import { AirportsService } from './services/airports/airports.service'
+import { FlightsService } from './services/flights/flights.service'
+import { TicketsService } from './services/tickets/tickets.service'
 import { UsersService } from './services/users/users.service';
-
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent],
@@ -27,9 +29,9 @@ import { UsersService } from './services/users/users.service';
     FooterModule,
     FlightsModule,
     ButtonsModule,
-    MyProfileModule
+    MyProfileModule,
   ],
-  providers: [UsersService],
+  providers: [AirportsService, FlightsService, TicketsService, UsersService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
