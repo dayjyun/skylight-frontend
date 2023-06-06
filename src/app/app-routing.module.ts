@@ -8,12 +8,12 @@ const routes: Routes = [
     path: '',
     component: AppComponent
   },
-  {
-    path: '',
+  // {
+    // path: '/results',
     // component: FlightSearchResults
-  },
+  // },
   {
-    path: "**",
+    path: '**',
     component: PageNotFoundComponent
   }
 ];
