@@ -39,7 +39,9 @@ export class UsersService {
    * Path: /api/myProfile
    * @return Logged-in user's data
    */
-  getMyProfile() {}
+  getMyProfile() {
+    return this.http.get('http://localhost:8080/api/myProfile')
+  }
 
   /**
    * Functionality: Edit user account (Private)
@@ -47,26 +49,34 @@ export class UsersService {
    * @param updateBody is the updated information for the logged-in user
    * @return updated user data
    */
-  updateMyProfile() {}
+  updateMyProfile(userData: any) {
+    return this.http.put('http://localhost:8080/api/myProfile', userData);
+  }
 
   /**
    * Functionality: Returns a list of flights the user booked	(Private)
    * Path: /api/myProfile/myFlights
    * @return List of tickets the user has booked
    */
-  getMyTickets() {}
+  getMyTickets() {
+    return this.http.get('http://localhost:8080/api/myProfile/myTickets');
+  }
 
   /**
    * Functionality: User submits request to become a pilot (Private)
    * Path: /api/myProfile/flyTheSkies
    * @return updated user data
    */
-  flyTheSkies() {}
+  flyTheSkies() {
+    return this.http.put('http://localhost:8080/api/myProfile', {});
+  }
 
   /**
    * Functionality: Returns a list of flight the admin has submitted	(Private)
    * Path: /api/myProfile/air
    * @return List of flights the user has scheduled
    */
-  getScheduledFlights() {}
+  getScheduledFlights() {
+    return this.http.get('http://localhost:8080/api/myProfile/air');
+  }
 }
