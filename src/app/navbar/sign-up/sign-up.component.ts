@@ -21,7 +21,7 @@ export class SignUpComponent implements OnInit {
    * Redirects the
    */
   registerUser() {
-    // Clear previous error message
+    // Clear previous error messages
     this.errorMessage = '';
 
     // Perform form validation

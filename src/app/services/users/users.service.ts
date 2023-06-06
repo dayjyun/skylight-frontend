@@ -30,7 +30,9 @@ export class UsersService {
    * @param loginRequest user credentials (email, password)
    * @return JWT key
    */
-  loginUser() {}
+  loginUser(userObj: any) {
+    return this.http.post<any>(`http://localhost:8080/api/auth/login`, userObj);
+  }
 
   /**
    * Functionality: Returns logged-in user’s account (Private)
