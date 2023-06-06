@@ -1,3 +1,41 @@
-<button type="button" class="btn btn-light">LOGIN</button>
-<!-- https://getbootstrap.com/docs/5.3/forms/floating-labels/#example -->
-
+<div class="login-container d-flex justify-content-center align-items-center flex-column">
+  <div class="row">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Log In</h3>
+        </div>
+        <div class="card-body">
+          <form action="" class="form">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <small *ngIf="email.invalid && (email.dirty || email.touched)" class="text-danger ml-2">
+                <div *ngIf="email.errors && email.errors['required']">
+                  Email is required.
+                </div>
+                <div *ngIf="email.errors && email.errors['email']">
+                  Invalid email format.
+                </div>
+              </small>
+              <input [(ngModel)]="loginUserData.email" name="email" type="email" class="form-control rounded-0" [class.is-invalid]="email.invalid && (email.dirty || email.touched)" required email #email="ngModel" />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <small *ngIf="password.invalid && (password.dirty || password.touched)" class="text-danger ml-2">
+                <div *ngIf="password.errors && password.errors['required']">
+                  Password is required.
+                </div>
+              </small>
+              <input [(ngModel)]="loginUserData.password" name="password" type="password" class="form-control rounded-0" [class.is-invalid]="password.invalid && (password.dirty || password.touched)" required #password="ngModel" />
+            </div>
+            <div class="pt-4 float-end">
+              <button (click)="loginUser()" type="button" class="btn btn-primary">
+                Log In
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

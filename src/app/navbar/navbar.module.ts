@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersService } from '../services/users/users.service';
+import { ButtonsModule } from '../buttons/buttons.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,7 @@ import { UsersService } from '../services/users/users.service';
     NavbarComponent,
   ],
   providers: [UsersService],
-  imports: [CommonModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, ButtonsModule],
   exports: [LogoComponent, LoginComponent, SignUpComponent, NavbarComponent],
 })
 export class NavbarModule {}

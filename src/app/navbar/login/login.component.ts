@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  loginUserData: any = {};
 
+  loginUser() {
+    // redirect user to user page
+  }
 }

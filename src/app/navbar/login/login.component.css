@@ -1,0 +1,14 @@
+.login-container {
+  margin: 8rem auto;
+}
+
+.row {
+  width: 80%;
+  min-width: 20rem;
+}
+
+@media screen and (max-width: 510px) {
+  .login-container {
+    margin-top: 11rem;
+  }
+}

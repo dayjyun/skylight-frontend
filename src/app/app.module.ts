@@ -10,6 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { FlightsModule } from './flights/flights.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { MainPageModule } from './main-page/main-page.module';
+import { ButtonsModule } from './buttons/buttons.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { MainPageModule } from './main-page/main-page.module';
     MainPageModule,
     FooterModule,
     FlightsModule,
+    ButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
