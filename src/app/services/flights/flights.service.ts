@@ -44,5 +44,5 @@ export class FlightsService {
    * @param flightId is the flight ID to search by
    * @return newly created ticket
    */
-  createTicketForFlight(flightId: number) {}
+  createTicketForFlight(flightId: number){}
 }
