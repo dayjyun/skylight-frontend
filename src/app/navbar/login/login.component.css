@@ -7,8 +7,17 @@
   min-width: 20rem;
 }
 
+.sign-up-btn {
+  margin: -2.5rem 0 1rem 0;
+  gap: 1rem;
+}
+
 @media screen and (max-width: 510px) {
   .login-container {
     margin-top: 11rem;
+  }
+
+  .sign-up-btn {
+    flex-direction: column;
   }
 }
