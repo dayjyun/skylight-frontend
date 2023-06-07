@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +33,9 @@ export class FlightsService {
    * @return the deleted flight data
    */
   deleteFlightById(flightId: number) {
-    return this.http.delete(`http://localhost:8080/api/flights/${flightId}`);
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.delete(`http://localhost:8080/api/flights/${flightId}`, { headers });
   }
 
   /**
@@ -49,15 +51,18 @@ export class FlightsService {
   }
 
   /**
-   * Functionality: Admin creates ticket for flight (Public | Private)
+   * Functionality: Admin creates ticket for flight (Private)
    * Path: /api/flights/{flightId}/tickets
    * @param flightId is the flight ID to search by
    * @return newly created ticket
    */
   createTicketForFlight(flightId: number, flightData: any) {
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
     return this.http.post(
       `http://localhost:8080/api/flights/${flightId}`,
-      flightData
+      flightData,
+      { headers }
     );
   }
 }
