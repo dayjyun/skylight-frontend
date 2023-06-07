@@ -31,7 +31,7 @@ const routes: Routes = [
     component: EditProfileComponent,
   },
   {
-    path: 'flights',
+    path: 'flights/:id',
     component: FlightsComponent,
   },
   {
