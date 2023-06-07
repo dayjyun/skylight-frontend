@@ -1,7 +1,57 @@
-<div class="flight-info-container da-container">
-  <div class="flight-detail-container">
-    <div>here</div>
-    <div>{{ flight?.id }}</div>
-    <div>here2</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Airplane</h2>
+          <p class="card-text"><strong>Name:</strong> {{ flight.airplane }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Departure</h2>
+          <p class="card-text"><strong>Date:</strong> {{ flight.departureDate }}</p>
+          <p class="card-text"><strong>Time:</strong> {{ flight.departureTime }}</p>
+          <p class="card-text"><strong>Airport:</strong> {{ flight.originAirport.name }} ({{ flight.originAirport.airportCode }})</p>
+          <p class="card-text"><strong>City:</strong> {{ flight.originAirport.city }}, {{ flight.originAirport.state }}</p>
+          <p class="card-text"><strong>Coordinates:</strong> {{ flight.originAirport.latitude }}, {{ flight.originAirport.longitude }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Arrival</h2>
+          <p class="card-text"><strong>Date:</strong> {{ flight.arrivalDate }}</p>
+          <p class="card-text"><strong>Time:</strong> {{ flight.arrivalTime }}</p>
+          <p class="card-text"><strong>Airport:</strong> {{ flight.destinationAirport.name }} ({{ flight.destinationAirport.airportCode }})</p>
+          <p class="card-text"><strong>City:</strong> {{ flight.destinationAirport.city }}, {{ flight.destinationAirport.state }}</p>
+          <p class="card-text"><strong>Coordinates:</strong> {{ flight.destinationAirport.latitude }}, {{ flight.destinationAirport.longitude }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Map</h2>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <p class="card-text"><strong>Distance:</strong> {{ flight.distanceMiles }} miles</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

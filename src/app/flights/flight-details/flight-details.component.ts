@@ -25,4 +25,8 @@ export class FlightDetailsComponent implements OnInit {
       });
     });
   }
+
+  log() {
+    console.log(this.flight)
+  }
 }

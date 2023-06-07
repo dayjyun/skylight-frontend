@@ -1,5 +1,5 @@
-<div class="flights-list-container">
-  <h2>All Flights</h2>
+<div data-spy="scroll" class="flights-list-container">
+  <h2 class="mb-4 text-center">All Flights</h2>
   <div data-spy="scroll" id="list-container">
     <a
       appATags
@@ -11,7 +11,7 @@
       <div class="row g-0 card-container">
         <!-- <div class="col-md-8"> -->
         <div class="card-body">
-          <h3 class="card-title">Flight #{{ flight.id }}</h3>
+          <h3 class="card-title">Flight {{ flight.id }}</h3>
           <div
             class="flights-container d-flex justify-content-evenly align-items-center"
           >
