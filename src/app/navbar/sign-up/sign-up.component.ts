@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../../services/users/users.service';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -34,7 +34,20 @@ export class SignUpComponent implements OnInit {
     }
 
     this.userService.createUser(this.registerUserData).subscribe((data) => {
-      if (data) this.router.navigate(['/myProfile']);
+      console.log(data);
+
+      if (data) {
+        // Prepare the data to be sent
+        const userData = { ...data };
+
+        // Set up the navigation extras with the data
+        const navigationExtras: NavigationExtras = {
+          state: { userData }, // Pass the userData as state
+        };
+
+        // Redirect to the myPage route with the navigation extras
+        this.router.navigate(['/login'], navigationExtras);
+      }
     });
   }
 }

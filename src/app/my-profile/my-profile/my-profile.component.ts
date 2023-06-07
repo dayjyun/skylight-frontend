@@ -12,9 +12,13 @@ export class MyProfileComponent {
 
   constructor(private userService: UsersService) { }
 
+  isAdmin() {
+    return this.userService.isAdmin();
+  }
+
   ngOnInit() {
-    this.userService.getMyProfile().subscribe(res => {
-      this.myProfile = res;
+    this.userService.getMyProfile().subscribe(data => {
+      this.myProfile = data;
     })
   }
 }
