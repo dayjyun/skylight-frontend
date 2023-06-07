@@ -5,6 +5,7 @@ import { SignUpButtonComponent } from './sign-up-button/sign-up-button.component
 import { BecomeAPilotButtonComponent } from './become-a-pilot-button/become-a-pilot-button.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { MyBookedFlightsButtonComponent } from './my-booked-flights-button/my-booked-flights-button.component';
+import { LogoutButtonComponent } from './logout-button/logout-button.component';
 
 @NgModule({
   declarations: [
@@ -12,13 +13,15 @@ import { MyBookedFlightsButtonComponent } from './my-booked-flights-button/my-bo
     SignUpButtonComponent,
     BecomeAPilotButtonComponent,
     MyBookedFlightsButtonComponent,
+    LogoutButtonComponent,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
     LoginButtonComponent,
     SignUpButtonComponent,
     BecomeAPilotButtonComponent,
-    MyBookedFlightsButtonComponent
+    MyBookedFlightsButtonComponent,
+    LogoutButtonComponent
   ],
 })
 export class ButtonsModule {}

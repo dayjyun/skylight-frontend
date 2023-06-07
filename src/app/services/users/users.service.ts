@@ -43,6 +43,22 @@ export class UsersService {
   }
 
   /**
+   * Functionality: Logs out user from their account
+   */
+  logout() {
+    console.log(localStorage);
+    localStorage.removeItem("jwt");
+  }
+
+  /**
+   * Functionality: Check if the user is logged in
+   */
+  isLoggedIn() {
+    const jwt = localStorage.getItem('jwt');
+    return !!jwt;
+  }
+
+  /**
    * Functionality: Returns logged-in user’s account (Private)
    * Path: /api/myProfile
    * @return Logged-in user's data
