@@ -6,6 +6,7 @@ import { SignUpComponent } from './navbar/sign-up/sign-up.component';
 import { LoginComponent } from './navbar/login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile/my-profile.component';
 import { FlightsComponent } from './flights/flights/flights.component';
+import { BecomeAPilotComponent } from './become-a-pilot/become-a-pilot/become-a-pilot.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'flights',
     component: FlightsComponent
+  },
+  {
+    path: 'become-a-pilot',
+    component: BecomeAPilotComponent
   },
   {
     path: '**',
