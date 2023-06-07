@@ -1,0 +1,20 @@
+a {
+    text-decoration: none;
+}
+
+.flights-list-container {
+    border: 2px solid green;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid blue;
+}
+
+.flights-container {
+    /* width: 40rem; */
+    border: 2px solid red;
+}

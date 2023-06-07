@@ -9,12 +9,15 @@ import { FlightsService } from '../../services/flights/flights.service';
   styleUrls: ['./flights-list.component.css'],
 })
 export class FlightsListComponent implements OnInit {
-  constructor(
-    private flightsService: FlightsService,
-    private route: ActivatedRoute
-  ) { }
+  flights: any;
+  flight: any;
 
-  ngOnInit(): void {}
+  constructor(private flightsService: FlightsService, private route: ActivatedRoute) {}
 
-  flights = this.flightsService.getAllFlights();
+  ngOnInit(): void {
+    this.flightsService.getAllFlights().subscribe(data => {
+      this.flights = data;
+      console.log(data)
+    })
+  }
 }

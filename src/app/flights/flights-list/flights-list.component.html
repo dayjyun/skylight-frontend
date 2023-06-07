@@ -1,1 +1,45 @@
-<p>flights-list works!</p>
+<div class="flights-list-container">
+  <h2>All Flights</h2>
+  <div data-spy="scroll" id="list-container">
+    <a
+      appATags
+      class="card mb-3 da-cards"
+      style="max-width: 540px"
+      *ngFor="let flight of flights"
+      routerLink="/flights/${{ flight.id }}"
+    >
+      <div class="row g-0 card-container">
+        <!-- <div class="col-md-8"> -->
+        <div class="card-body">
+          <h3 class="card-title">Flight #{{ flight.id }}</h3>
+          <div
+            class="flights-container d-flex justify-content-evenly align-items-center"
+          >
+            <div class="departures-container">
+              <h4>From</h4>
+              <h4>{{ flight.originAirport.name }} Airport</h4>
+              <h5>{{ flight.originAirport.airportCode }}</h5>
+              <div>
+                {{ flight.originAirport.city }},
+                {{ flight.originAirport.state }}
+              </div>
+              <div>{{ flight.departureDate }}: {{ flight.departureTime }}</div>
+            </div>
+
+            <div class="arrivals-container">
+              <h4>To</h4>
+              <h4>{{ flight.destinationAirport.name }} Airport</h4>
+              <h5>{{ flight.destinationAirport.airportCode }}</h5>
+              <div>
+                {{ flight.destinationAirport.city }},
+                {{ flight.destinationAirport.state }}
+              </div>
+              <div>{{ flight.arrivalDate }}: {{ flight.arrivalTime }}</div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
