@@ -5,6 +5,7 @@ import { MainPageComponent } from './main-page/main-page/main-page.component';
 import { SignUpComponent } from './navbar/sign-up/sign-up.component';
 import { LoginComponent } from './navbar/login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile/my-profile.component';
+import { FlightsComponent } from './flights/flights/flights.component';
 
 const routes: Routes = [
   {
@@ -25,7 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'flights',
-    component: MyProfileComponent
+    component: FlightsComponent
   },
   {
     path: '**',
