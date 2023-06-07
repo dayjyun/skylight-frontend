@@ -19,7 +19,7 @@ export class UsersService {
   /**
    * Functionality: User creates account (Public)
    * Path: /api/auth/register
-   * @param userObject is the data for the user being registered
+   * @param userData is the data for the user being registered
    * @return the data for the newly registered user
    */
   createUser(userData: any) {
@@ -32,7 +32,7 @@ export class UsersService {
   /**
    * Functionality: User logs into of account (Public)
    * Path: /api/auth/login
-   * @param loginRequest user credentials (email, password)
+   * @param userData user credentials (email, password)
    * @return JWT key
    */
   loginUser(userData: any) {
@@ -56,7 +56,7 @@ export class UsersService {
   /**
    * Functionality: Edit user account (Private)
    * Path: /api/myProfile
-   * @param updateBody is the updated information for the logged-in user
+   * @param userData is the updated information for the logged-in user
    * @return updated user data
    */
   updateMyProfile(userData: any) {
@@ -75,7 +75,9 @@ export class UsersService {
   getMyTickets() {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
-    return this.http.get('http://localhost:8080/api/myProfile/myTickets', { headers });
+    return this.http.get('http://localhost:8080/api/myProfile/myTickets', {
+      headers,
+    });
   }
 
   /**
@@ -86,7 +88,11 @@ export class UsersService {
   flyTheSkies() {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
-    return this.http.put('http://localhost:8080/api/myProfile', { isAdmin: true }, { headers });
+    return this.http.put(
+      'http://localhost:8080/api/myProfile',
+      { isAdmin: true },
+      { headers }
+    );
   }
 
   /**
@@ -97,6 +103,8 @@ export class UsersService {
   getScheduledFlights() {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
-    return this.http.get('http://localhost:8080/api/myProfile/air', { headers });
+    return this.http.get('http://localhost:8080/api/myProfile/air', {
+      headers,
+    });
   }
 }
