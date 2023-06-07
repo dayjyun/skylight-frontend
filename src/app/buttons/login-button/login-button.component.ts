@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -6,9 +6,10 @@ import { Router } from '@angular/router';
   templateUrl: './login-button.component.html',
   styleUrls: ['./login-button.component.css'],
 })
-export class LoginButtonComponent {
-  constructor(private router: Router) {}
+export class LoginButtonComponent  {
   
+  constructor(private router: Router) {}
+
   loginPage() {
     this.router.navigate(['/login']);
   }
