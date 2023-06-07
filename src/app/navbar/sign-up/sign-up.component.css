@@ -1,5 +1,5 @@
 .sign-up-container {
-  margin: 8rem auto;
+  margin: 5rem auto;
   background-image: url("https://skylight-project.s3.amazonaws.com/frontend/day.jpg");
   background-size: cover;
   background-position: center;
@@ -22,19 +22,25 @@
   mix-blend-mode: overlay;
 }
 
-.row {
+.sign-up-content {
+  margin: 3rem auto;
   width: 80%;
   min-width: 20rem;
 }
 
+.row {
+  /* width: 80%; */
+  /* min-width: 20rem; */
+}
+
 .login-btn {
-  margin: -2.5rem 0 1rem 0;
+  margin: 2rem 0 -1rem 0;
   gap: 1rem;
 }
 
 @media screen and (max-width: 510px) {
   .sign-up-container {
-    margin-top: 11rem;
+    /* margin-top: 11rem; */
   }
 
   .login-btn {
