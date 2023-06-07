@@ -16,13 +16,14 @@ export class FlightDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe((params) => {
+    // this.route.paramMap.subscribe((params) => {
       this.flightsService.getAllFlights().subscribe((data: any) => {
-        let paramId: string = params.get('id') || '';
+        // let paramId: string = params.get('id') || '';
         this.flight = data.find((flight: any) => {
-          return flight?.id === +paramId;
+          console.log(flight)
+          // return flight?.id === parseInt(paramId);
         });
       });
-    });
+    // });
   }
 }
