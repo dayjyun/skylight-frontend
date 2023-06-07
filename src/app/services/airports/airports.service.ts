@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -39,15 +39,18 @@ export class AirportsService {
   }
 
   /**
-   * Functionality: Admin creates a new flight origin (ID/Code) (Private)
-   * Path: /api/airports/{airportId}/arrivals
+   * Functionality: Admin creates a new flight origin (Code) (Private)
+   * Path: /api/airports/code/{airportCode}/arrivals
    * @param airportCode is the origin airport details
    * @param departingFlight is the origin flight data
    * @return flight departure details
    */
-  createFlightOrigin(airportCode: string) {
-    return this.http.get(
-      `http://localhost:8080/api/airports/code/${airportCode}/origin`
+  createFlightOrigin(airportCode: string, departingFlight: any) {
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.post(
+      `http://localhost:8080/api/airports/code/${airportCode}/origin`, departingFlight,
+      { headers }
     );
   }
 
@@ -58,9 +61,11 @@ export class AirportsService {
    * @param arrivingFlight is the destination flight data
    * @return flight departure details
    */
-  createFlightDestination(airportCode: string) {
-    return this.http.get(
-      `http://localhost:8080/api/airports/code/${airportCode}/destination`
+  createFlightDestination(airportCode: string, arrivingFlight: any) {
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.post(
+      `http://localhost:8080/api/airports/code/${airportCode}/destination`, arrivingFlight, { headers }
     );
   }
 
