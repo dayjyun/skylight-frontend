@@ -17,9 +17,10 @@ import { AirportsService } from './services/airports/airports.service'
 import { FlightsService } from './services/flights/flights.service'
 import { TicketsService } from './services/tickets/tickets.service'
 import { UsersService } from './services/users/users.service';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 @NgModule({
-  declarations: [AppComponent, PageNotFoundComponent],
+  declarations: [AppComponent, PageNotFoundComponent, EditProfileComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -32,6 +33,9 @@ import { UsersService } from './services/users/users.service';
     ButtonsModule,
     MyProfileModule,
     BecomeAPilotModule
+  ],
+  exports: [
+    EditProfileComponent
   ],
   providers: [AirportsService, FlightsService, TicketsService, UsersService],
   bootstrap: [AppComponent],

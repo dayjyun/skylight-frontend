@@ -57,20 +57,6 @@ export class UsersService {
     return !!jwt;
   }
 
-  isAdmin() {
-    const jwt = localStorage.getItem('jwt');
-    if (jwt) {
-      // Decode the JWT to extract the user information
-      const jwtData = JSON.parse(atob(jwt.split('.')[1]));
-      // Invert the value of isAdmin property
-      // If jwtData.isAdmin is true, return false (indicating non-admin user)
-      // If jwtData.isAdmin is false, return true (indicating admin user)
-      return !jwtData.isAdmin;
-    }
-    // If JWT is not present, return false (indicating non-admin user)
-    return false;
-  }
-
   /**
    * Functionality: Returns logged-in user’s account (Private)
    * Path: /api/myProfile
@@ -133,6 +119,14 @@ export class UsersService {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
     return this.http.get('http://localhost:8080/api/myProfile/air', {
+      headers,
+    });
+  }
+
+  isAdmin() {
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.get('http://localhost:8080/api/myProfile/isAdmin', {
       headers,
     });
   }

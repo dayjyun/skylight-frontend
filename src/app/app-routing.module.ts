@@ -7,40 +7,45 @@ import { LoginComponent } from './navbar/login/login.component';
 import { MyProfileComponent } from './my-profile/my-profile/my-profile.component';
 import { FlightsComponent } from './flights/flights/flights.component';
 import { BecomeAPilotComponent } from './become-a-pilot/become-a-pilot/become-a-pilot.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: MainPageComponent
+    component: MainPageComponent,
   },
   {
     path: 'sign-up',
-    component: SignUpComponent
+    component: SignUpComponent,
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
   },
   {
     path: 'myProfile',
-    component: MyProfileComponent
+    component: MyProfileComponent,
+  },
+  {
+    path: 'myProfile/edit',
+    component: EditProfileComponent,
   },
   {
     path: 'flights',
-    component: FlightsComponent
+    component: FlightsComponent,
   },
   {
     path: 'become-a-pilot',
-    component: BecomeAPilotComponent
+    component: BecomeAPilotComponent,
   },
   {
     path: '**',
-    component: PageNotFoundComponent
-  }
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
