@@ -6,6 +6,7 @@
     >
       <app-login-button *ngIf="!isLoggedIn()"></app-login-button>
       <app-sign-up-button *ngIf="!isLoggedIn()"></app-sign-up-button>
+      <app-my-profile-button *ngIf="isLoggedIn()"></app-my-profile-button>
       <app-logout-button *ngIf="isLoggedIn()" (click)="logout()"></app-logout-button>
     </div>
   </div>

@@ -7,6 +7,8 @@ import { AppRoutingModule } from '../app-routing.module';
 import { MyBookedFlightsButtonComponent } from './my-booked-flights-button/my-booked-flights-button.component';
 import { LogoutButtonComponent } from './logout-button/logout-button.component';
 import { ScheduledFlightsButtonComponent } from './scheduled-flights-button/scheduled-flights-button.component';
+import { MyProfileButtonComponent } from './my-profile-button/my-profile-button.component';
+import { EditMyProfileButtonComponent } from './edit-my-profile-button/edit-my-profile-button.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ScheduledFlightsButtonComponent } from './scheduled-flights-button/sche
     MyBookedFlightsButtonComponent,
     LogoutButtonComponent,
     ScheduledFlightsButtonComponent,
+    MyProfileButtonComponent,
+    EditMyProfileButtonComponent,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
@@ -25,6 +29,8 @@ import { ScheduledFlightsButtonComponent } from './scheduled-flights-button/sche
     MyBookedFlightsButtonComponent,
     LogoutButtonComponent,
     ScheduledFlightsButtonComponent,
+    MyProfileButtonComponent,
+    EditMyProfileButtonComponent,
   ],
 })
 export class ButtonsModule {}

@@ -6,10 +6,11 @@
           <h2 class="card-title">Welcome</h2>
           <hr />
           <h4 class="card-subtitle mb-3">{{ myProfile.name }}</h4>
+          <app-edit-my-profile-button></app-edit-my-profile-button>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">Email: {{ myProfile.email }}</li>
           </ul>
-          <div class="mt-3">
+          <div class="mt-3 d-flex justify-content-evenly">
             <app-my-booked-flights-button></app-my-booked-flights-button>
             <app-become-a-pilot-button *ngIf="!isAdmin()"></app-become-a-pilot-button>
             <app-scheduled-flights-button *ngIf="isAdmin()"></app-scheduled-flights-button>
