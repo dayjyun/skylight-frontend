@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,13 @@ export class TicketsService {
    * @return a ticket
    */
   getTicketById(ticketId: number) {
-    return this.http.get(`http://localhost:8080/api/tickets/${ticketId}`);
+    const jwt = localStorage.getItem('jwt');
+    const headers = jwt
+      ? new HttpHeaders({ Authorization: `Bearer ${jwt}` })
+      : undefined;
+    return this.http.get(`http://localhost:8080/api/tickets/${ticketId}`, {
+      headers,
+    });
   }
 
   /**
@@ -24,7 +30,11 @@ export class TicketsService {
    * @return the deleted ticket data
    */
   deleteTicket(ticketId: number) {
-    return this.http.delete(`http://localhost:8080/api/tickets/${ticketId}`);
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.delete(`http://localhost:8080/api/tickets/${ticketId}`, {
+      headers,
+    });
   }
 
   /**
@@ -34,9 +44,14 @@ export class TicketsService {
    * @return the booked ticket data
    */
   bookFlight(ticketId: number) {
+    const jwt = localStorage.getItem('jwt');
+    const headers = jwt
+      ? new HttpHeaders({ Authorization: `Bearer ${jwt}` })
+      : undefined;
     return this.http.put(
       `http://localhost:8080/api/tickets/${ticketId}/bookFlight`,
-      {}
+      {},
+      { headers }
     );
   }
 }
