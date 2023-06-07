@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 interface User {
   name: string;
@@ -12,6 +12,8 @@ interface User {
   providedIn: 'root',
 })
 export class UsersService {
+  headers: any;
+
   constructor(private http: HttpClient) {}
 
   /**
@@ -46,7 +48,9 @@ export class UsersService {
    * @return Logged-in user's data
    */
   getMyProfile() {
-    return this.http.get('http://localhost:8080/api/myProfile');
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.get('http://localhost:8080/api/myProfile', { headers });
   }
 
   /**
@@ -56,7 +60,11 @@ export class UsersService {
    * @return updated user data
    */
   updateMyProfile(userData: any) {
-    return this.http.put('http://localhost:8080/api/myProfile', userData);
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.put('http://localhost:8080/api/myProfile', userData, {
+      headers,
+    });
   }
 
   /**
@@ -65,16 +73,20 @@ export class UsersService {
    * @return List of tickets the user has booked
    */
   getMyTickets() {
-    return this.http.get('http://localhost:8080/api/myProfile/myTickets');
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.get('http://localhost:8080/api/myProfile/myTickets', { headers });
   }
 
   /**
    * Functionality: User submits request to become a pilot (Private)
    * Path: /api/myProfile/flyTheSkies
-   * @return updated user data
+   * @return updated user to an admin
    */
   flyTheSkies() {
-    return this.http.put('http://localhost:8080/api/myProfile', {});
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.put('http://localhost:8080/api/myProfile', { isAdmin: true }, { headers });
   }
 
   /**
@@ -83,6 +95,8 @@ export class UsersService {
    * @return List of flights the user has scheduled
    */
   getScheduledFlights() {
-    return this.http.get('http://localhost:8080/api/myProfile/air');
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    return this.http.get('http://localhost:8080/api/myProfile/air', { headers });
   }
 }

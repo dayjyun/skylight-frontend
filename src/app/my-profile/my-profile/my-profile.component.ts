@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 import { UsersService} from '../../services/users/users.service'
 
@@ -9,9 +8,13 @@ import { UsersService} from '../../services/users/users.service'
   styleUrls: ['./my-profile.component.css']
 })
 export class MyProfileComponent {
-  constructor(private userService: UsersService) {
+  myProfile: any;
 
+  constructor(private userService: UsersService) { }
+
+  ngOnInit() {
+    this.userService.getMyProfile().subscribe(res => {
+      this.myProfile = res;
+    })
   }
-
-  myFlights = this.userService.getMyTickets();
 }

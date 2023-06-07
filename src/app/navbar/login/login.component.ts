@@ -24,16 +24,16 @@ export class LoginComponent implements OnInit {
     this.errorMessage = '';
 
     // Perform form validation
-    if (
-      !this.loginUserData.email ||
-      !this.loginUserData.password
-    ) {
+    if (!this.loginUserData.email || !this.loginUserData.password) {
       this.errorMessage = 'Field is required.';
       return;
     }
 
-    this.userService.loginUser(this.loginUserData).subscribe(data => {
-      if (data) this.router.navigate(['/myProfile'])
-    })
+    this.userService.loginUser(this.loginUserData).subscribe((data) => {
+      if (data) {
+        localStorage.setItem("jwt", data.message);
+        this.router.navigate(['/myProfile']);
+      }
+    });
   }
 }
