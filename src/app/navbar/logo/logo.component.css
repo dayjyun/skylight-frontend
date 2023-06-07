@@ -1,4 +1,13 @@
 .container-fluid {
-    width: 70%;
-    margin: 0 auto;
+  width: 70%;
+  margin: 0 auto;
+}
+
+img {
+  width: 3.5rem;
+}
+
+.logo-text {
+  font-weight: 600;
+  font-family: "Red Hat Text", sans-serif;
 }
