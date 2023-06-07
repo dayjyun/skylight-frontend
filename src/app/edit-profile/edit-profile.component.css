@@ -1,0 +1,20 @@
+.edit-container {
+    padding: 8rem 0;
+    margin: 0 auto;
+}
+
+.edit-content {
+    width: 80%;
+}
+
+.row {
+    width: 80%;
+    max-width: 60rem;
+    min-width: 20rem;
+}
+
+@media screen and (max-width: 510px) {
+    .row {
+        padding: 5rem 0;
+    }
+}
