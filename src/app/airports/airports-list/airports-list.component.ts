@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AirportsService } from '../../services/airports/airports.service';
+import { apiKey } from '../../../../key'
 
 @Component({
   selector: 'app-airports-list',
@@ -13,6 +14,7 @@ export class AirportsListComponent implements OnInit {
   constructor(private airportsService: AirportsService) {}
 
   ngOnInit(): void {
+    console.log(apiKey);
     this.airportsService.getAllAirports().subscribe((data) => {
       this.airports = data;
     });
