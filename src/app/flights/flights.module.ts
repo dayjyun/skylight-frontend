@@ -5,8 +5,6 @@ import { FlightsListComponent } from './flights-list/flights-list.component';
 import { FlightDetailsComponent } from './flight-details/flight-details.component';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
   declarations: [
     FlightsComponent,

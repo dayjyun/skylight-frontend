@@ -46,7 +46,7 @@ export class UsersService {
    * Functionality: Logs out user from their account
    */
   logout() {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem('jwt');
   }
 
   /**

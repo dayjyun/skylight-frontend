@@ -9,8 +9,8 @@ import { FlightsComponent } from './flights/flights/flights.component';
 import { BecomeAPilotComponent } from './become-a-pilot/become-a-pilot/become-a-pilot.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ResultsComponent } from './results/results/results.component';
-import { MyBookedFlightsComponent } from './my-profile/my-booked-flights/my-booked-flights.component';
 import { AirportsComponent } from './airports/airports/airports.component';
+import { MyBookedFlightsComponent } from './my-booked-flights/my-booked-flights/my-booked-flights.component';
 
 const routes: Routes = [
   {
@@ -53,7 +53,7 @@ const routes: Routes = [
   },
   {
     path: 'myProfile/my-tickets',
-    component: MyBookedFlightsComponent,
+    component: MyBookedFlightsComponent
   },
   {
     path: 'results',
