@@ -1,13 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-interface User {
-  name: string;
-  email: string;
-  password: string;
-  isAdmin: boolean;
-}
-
 @Injectable({
   providedIn: 'root',
 })
@@ -46,7 +39,7 @@ export class UsersService {
    * Functionality: Logs out user from their account
    */
   logout() {
-    localStorage.removeItem("jwt");
+    localStorage.removeItem('jwt');
   }
 
   /**
@@ -119,14 +112,6 @@ export class UsersService {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
     return this.http.get('http://localhost:8080/api/myProfile/air', {
-      headers,
-    });
-  }
-
-  isAdmin() {
-    const jwt = localStorage.getItem('jwt');
-    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
-    return this.http.get('http://localhost:8080/api/myProfile/isAdmin', {
       headers,
     });
   }

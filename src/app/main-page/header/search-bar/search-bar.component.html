@@ -12,7 +12,7 @@
     <a
       class="list-group-item list-group-item-action"
       *ngFor="let airport of airports"
-      [routerLink]="['/results', airport.name]"
+      [routerLink]="['/airports', airport.id]"
     >
       {{ airport.name }} - {{ airport.airportCode }}
     </a>

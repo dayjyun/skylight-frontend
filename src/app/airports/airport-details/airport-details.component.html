@@ -1,7 +1,11 @@
 <div class="airport-info-container card mb-3">
   <h2 class="mb-4 text-center">Details</h2>
-  <div #mapContainer class="card-img-top" style="height: 30rem; width: 30rem;"></div>
-  <div class="card-body">
+  <div
+    #mapContainer
+    class="card-img-top"
+    style="height: 30rem; width: 30rem"
+  ></div>
+  <div class="card-body" *ngIf="airport">
     <h5 class="card-title">{{ airport.name }} Airport</h5>
     <p class="card-text">{{ airport.description }}</p>
     <ul class="list-group">
@@ -19,6 +23,14 @@
         <strong>Longitude:</strong> {{ airport.longitude }}
       </li>
     </ul>
-    <button type="button" class="btn btn-success" routerLink="/airports/{{airport.id}}/flights">All Flights</button>
+    <div class="pt-3">
+      <button
+        type="button"
+        class="btn btn-success"
+        routerLink="/airports/{{ airport.id }}/flights"
+      >
+        Flights
+      </button>
+    </div>
   </div>
 </div>

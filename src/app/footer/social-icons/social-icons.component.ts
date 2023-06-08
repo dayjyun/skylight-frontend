@@ -12,9 +12,23 @@ interface Dev {
   styleUrls: ['./social-icons.component.css'],
 })
 export class SocialIconsComponent {
+  /**
+   * Developer information.
+   */
   dev: Dev = {
+    /**
+     * Portfolio website URL.
+     */
     portfolio: 'https://kbarrios.dev/',
+
+    /**
+     * GitHub profile URL.
+     */
     github: 'https://github.com/dayjyun',
+
+    /**
+     * LinkedIn profile URL.
+     */
     linkedIn: 'https://www.linkedin.com/in/kevinbarrios12/',
   };
 }

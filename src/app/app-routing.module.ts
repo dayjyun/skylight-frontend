@@ -8,26 +8,25 @@ import { MyProfileComponent } from './my-profile/my-profile/my-profile.component
 import { FlightsComponent } from './flights/flights/flights.component';
 import { BecomeAPilotComponent } from './become-a-pilot/become-a-pilot/become-a-pilot.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
-import { ResultsComponent } from './results/results/results.component';
-import { MyBookedFlightsComponent } from './my-profile/my-booked-flights/my-booked-flights.component';
 import { AirportsComponent } from './airports/airports/airports.component';
+import { MyBookedFlightsComponent } from './my-booked-flights/my-booked-flights/my-booked-flights.component';
+import { AirportFlightsComponent } from './airports/airport-details/airport-flights/airport-flights.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainPageComponent,
   },
-  // {
-  //   path: 'air',
-  //   component: BecomeAPilotComponent,
-  // },
   {
     path: 'airports/:id',
-    component: AirportsComponent,
     children: [
       {
+        path: "",
+        component: AirportsComponent
+      },
+      {
         path: 'flights',
-        component: FlightsComponent,
+        component: AirportFlightsComponent,
       },
     ],
   },
@@ -53,11 +52,7 @@ const routes: Routes = [
   },
   {
     path: 'myProfile/my-tickets',
-    component: MyBookedFlightsComponent,
-  },
-  {
-    path: 'results',
-    component: ResultsComponent,
+    component: MyBookedFlightsComponent
   },
   {
     path: 'sign-up',
