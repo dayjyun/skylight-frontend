@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { AirportsService } from '../../../services/airports/airports.service';
-import { debounceTime } from 'rxjs/operators';
-import { Router } from '@angular/router';
-import { FlightsService } from '../../../services/flights/flights.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -29,9 +26,5 @@ export class SearchBarComponent {
         );
       });
     });
-  }
-
-  clearSearchBar() {
-    this.searchBarText = '';
   }
 }
