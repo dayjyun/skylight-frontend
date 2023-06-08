@@ -8,6 +8,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { UsersService } from '../services/users/users.service';
 import { ButtonsModule } from '../buttons/buttons.module';
+import { RouterModule } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -17,7 +19,7 @@ import { ButtonsModule } from '../buttons/buttons.module';
     NavbarComponent,
   ],
   providers: [UsersService],
-  imports: [CommonModule, FormsModule, HttpClientModule, ButtonsModule],
+  imports: [CommonModule, FormsModule, HttpClientModule, ButtonsModule, RouterModule],
   exports: [LogoComponent, LoginComponent, SignUpComponent, NavbarComponent],
 })
 export class NavbarModule {}

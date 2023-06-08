@@ -1,52 +1,4 @@
-<!-- <div class="search-container">
-  <div class="row d-flex">
-    <div class="col">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="From"
-        aria-label="From"
-        [(ngModel)]="originSearchBarText"
-
-      />
-      <ul *ngIf="originSearchBarText && filteredOriginAirports.length > 0">
-        <li *ngFor="let airport of filteredOriginAirports" (click)="selectOriginAirport(airport)">
-          {{ airport.name }} - {{ airport.code }}
-        </li>
-      </ul>
-    </div>
-    <div class="col">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Destination"
-        aria-label="Destination"
-        [(ngModel)]="destinationSearchBarText"
-        (input)="search()"
-      />
-      <ul *ngIf="destinationSearchBarText && filteredDestinationAirports.length > 0">
-        <li *ngFor="let airport of filteredDestinationAirports" (click)="selectDestinationAirport(airport)">
-          {{ airport.name }} - {{ airport.code }}
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="col-12 d-flex align-self-lg-end d-flex justify-content-center">
-    <button
-      type="submit"
-      class="btn btn-primary"
-      (click)="search()"
-    >
-      LET'S FLY
-    </button>
-  </div>
-</div> -->
-
-<!-- <div>{{ flights }}</div> -->
-
-
-
-<div>
+<div >
   <form class="form-inline" (input)="filterAirports()">
     <input
       [(ngModel)]="searchBarText"
@@ -68,12 +20,3 @@
     <div *ngIf="airports.length === 0" class="no-results-text">No results found</div>
   </div>
 </div>
-
-<!--
-<div class="input-group">
-  <input type="text" class="form-control" placeholder="Search for departing flights" [(ngModel)]="searchTerm">
-  <button class="btn btn-primary" (click)="search()">Search</button>
-</div>
-<ul>
-  <li *ngFor="let flight of searchResults">{{ flight.name }}</li>
-</ul> -->

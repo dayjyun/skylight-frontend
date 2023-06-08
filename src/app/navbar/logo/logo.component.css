@@ -1,3 +1,7 @@
+.navbar-brand:hover {
+  cursor: pointer;
+}
+
 .container-fluid {
   width: 70%;
   margin: 0 auto;
