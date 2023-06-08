@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'myProfile/edit',
     component: EditProfileComponent,
   },
+  // {
+    // path: 'airports/:id',
+    // component: Ai
+  // }
   {
     path: 'flights/:id',
     component: FlightsComponent,
