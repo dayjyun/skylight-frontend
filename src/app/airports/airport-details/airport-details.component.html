@@ -1,42 +1,23 @@
-<!-- <div class="airport-info-container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="card mb-4">
-        <div class="card-body" *ngIf="airport">
-          <h2 class="card-title">Airport</h2>
-          <p class="card-text"><strong>Name:</strong> {{ airport.name }}</p>
-          <p class="card-text"><strong>Airport Code:</strong> {{ airport.airportCode }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card mb-4">
-        <div class="card-body">
-          <h2 class="card-title">Location</h2>
-          <p class="card-text"><strong>City:</strong> {{ airport.city }}, {{ airport.state }}</p>
-          <p class="card-text"><strong>Coordinates:</strong> {{ airport.latitude }}, {{ airport.longitude }}</p>
-        </div>
-      </div>
-    </div>
-  </div> -->
-  <!-- <div class="row">
-    <div class="col-md-12">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title">Map</h2>
-          <div id="map"></div>
-        </div>
-      </div>
-    </div>
-  </div> -->
-<!-- </div> -->
-<div class="card mb-3">
-  <div #mapContainer class="card-img-top" style="height: 300px;"></div>
+<div class="airport-info-container card mb-3">
+  <h2 class="mb-4 text-center">Details</h2>
+  <div #mapContainer class="card-img-top" style="height: 30rem; width: 30rem;"></div>
   <div class="card-body">
-    <h5 class="card-title">{{ airport.name }}</h5>
+    <h5 class="card-title">{{ airport.name }} Airport</h5>
     <p class="card-text">{{ airport.description }}</p>
-    <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Airport Code:</strong> {{ airport.airportCode }}
+      </li>
+      <li class="list-group-item"><strong>City:</strong> {{ airport.city }}</li>
+      <li class="list-group-item">
+        <strong>State:</strong> {{ airport.state }}
+      </li>
+      <li class="list-group-item">
+        <strong>Latitude:</strong> {{ airport.latitude }}
+      </li>
+      <li class="list-group-item">
+        <strong>Longitude:</strong> {{ airport.longitude }}
+      </li>
+    </ul>
   </div>
 </div>

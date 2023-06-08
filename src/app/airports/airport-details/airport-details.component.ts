@@ -1,6 +1,16 @@
-import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  ViewChild,
+  OnInit,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AirportsService } from '../../services/airports/airports.service';
+import { apiKey } from '../../../../key';
+
+
+declare var google: any;
 
 @Component({
   selector: 'app-airport-details',
@@ -26,8 +36,8 @@ export class AirportDetailsComponent implements OnInit, AfterViewInit {
           return airport.id === +paramId;
         });
 
-        // Call the initMap function after fetching the airport details
-        this.initMap();
+        // Load Google Maps library after fetching the airport details
+        this.loadMapsLibrary();
       });
     });
   }
@@ -36,17 +46,34 @@ export class AirportDetailsComponent implements OnInit, AfterViewInit {
     // No changes required in this function
   }
 
+  loadMapsLibrary(): void {
+    if (!this.google) {
+      const script = document.createElement('script');
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}`;
+      script.onload = () => {
+        this.google = google;
+        this.initMap();
+      };
+      document.body.appendChild(script);
+    } else {
+      this.initMap();
+    }
+  }
+
   initMap(): void {
     const mapOptions = {
-      center: { lat: this.airport.latitude, lng: this.airport.longitude },
+      center: { lat: +this.airport.latitude, lng: +this.airport.longitude },
       zoom: 12,
       disableDefaultUI: true, // Optional: Disable default map UI
     };
 
-    const map = new this.google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+    const map = new this.google.maps.Map(
+      this.mapContainer.nativeElement,
+      mapOptions
+    );
 
     const marker = new this.google.maps.Marker({
-      position: { lat: this.airport.latitude, lng: this.airport.longitude },
+      position: { lat: +this.airport.latitude, lng: +this.airport.longitude },
       map: map,
     });
   }
