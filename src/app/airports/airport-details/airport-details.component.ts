@@ -18,16 +18,35 @@ declare var google: any;
   styleUrls: ['./airport-details.component.css'],
 })
 export class AirportDetailsComponent implements OnInit, AfterViewInit {
+  /**
+   * Holds the airport data.
+   */
   airport: any;
+
+  /**
+   * Holds the Google Maps library.
+   */
   google: any;
 
+  /**
+   * Reference to the map container element.
+   */
   @ViewChild('mapContainer', { static: false }) mapContainer!: ElementRef;
 
+  /**
+   * Creates an instance of AirportDetailsComponent.
+   * @param route - The activated route containing the route parameters.
+   * @param airportsService - The service used for retrieving airport data.
+   */
   constructor(
     private route: ActivatedRoute,
     private airportsService: AirportsService
   ) {}
 
+  /**
+   * Lifecycle hook that is called after the component is initialized.
+   * Retrieves the airport data and initializes Google Maps.
+   */
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.airportsService.getAllAirports().subscribe((data: any) => {
@@ -42,10 +61,16 @@ export class AirportDetailsComponent implements OnInit, AfterViewInit {
     });
   }
 
+  /**
+   * Lifecycle hook that is called after the component's view has been initialized.
+   */
   ngAfterViewInit(): void {
     // No changes required in this function
   }
 
+  /**
+   * Loads the Google Maps library and initializes the map.
+   */
   loadMapsLibrary(): void {
     if (!this.google) {
       const script = document.createElement('script');
@@ -60,6 +85,9 @@ export class AirportDetailsComponent implements OnInit, AfterViewInit {
     }
   }
 
+  /**
+   * Initializes the Google Map with the airport's location.
+   */
   initMap(): void {
     const mapOptions = {
       center: { lat: +this.airport.latitude, lng: +this.airport.longitude },
