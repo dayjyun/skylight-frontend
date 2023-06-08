@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { UsersService } from 'src/app/services/users/users.service';
 
 interface Card {
   img: string;
@@ -12,6 +15,13 @@ interface Card {
   styleUrls: ['./become-a-pilot.component.css'],
 })
 export class BecomeAPilotComponent {
+  constructor(private router: Router, private usersService: UsersService) {}
+
+  flyTheSkies() {
+    this.usersService.flyTheSkies();
+    this.router.navigate(['/myProfile']);
+  }
+
   cards: Card[] = [
     {
       img: '../assets/icons/user-flying.png',

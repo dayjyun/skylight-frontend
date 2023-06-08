@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 interface User {
   name: string;
@@ -100,14 +102,32 @@ export class UsersService {
    * Path: /api/myProfile/flyTheSkies
    * @return updated user to an admin
    */
-  flyTheSkies() {
+  // flyTheSkies() {
+  //   const jwt = localStorage.getItem('jwt');
+  //   const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+  //   return this.http.put(
+  //     'http://localhost:8080/api/myProfile',
+  //     { isAdmin: true },
+  //     { headers }
+  //   );
+  // }
+  flyTheSkies(): Observable<any> {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
-    return this.http.put(
-      'http://localhost:8080/api/myProfile',
-      { isAdmin: true },
-      { headers }
-    );
+
+    return this.http
+      .put(
+        'http://localhost:8080/api/myProfile',
+        { isAdmin: true },
+        { headers }
+      )
+      .pipe(
+        catchError((error) => {
+          // Handle error here, such as showing an error message or logging
+          console.error('An error occurred during the profile update:', error);
+          return throwError('Profile update failed. Please try again.');
+        })
+      );
   }
 
   /**

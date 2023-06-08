@@ -34,6 +34,10 @@ input {
   white-space: nowrap;
 }
 
+a:active {
+   background-color: #f0f0f0;
+}
+
 .results-list:hover {
   outline: 1px solid #4fa4ff;
   border-radius: 4px;
