@@ -13,17 +13,22 @@ export class SearchBarComponent {
   searchBarText: string = '';
   airports: any;
 
-  constructor(
-    private airportsService: AirportsService,
-    private flightsService: FlightsService
-  ) {}
+  constructor(private airportsService: AirportsService) {}
 
   filterAirports() {
     this.airportsService.getAllAirports().subscribe((data: any) => {
       this.airports = data.filter((airport: any) => {
-        return (airport.name.toLowerCase().includes(this.searchBarText.toLowerCase()) || airport.airportCode.toLowerCase().includes(this.searchBarText.toLowerCase()) )
-      })
-    })
+        return (
+          airport.name
+            .toLowerCase()
+            .includes(this.searchBarText.toLowerCase()) ||
+          airport.airportCode
+            .toLowerCase()
+            .includes(this.searchBarText.toLowerCase()) ||
+          airport.city.toLowerCase().includes(this.searchBarText.toLowerCase())
+        );
+      });
+    });
   }
 
   clearSearchBar() {
