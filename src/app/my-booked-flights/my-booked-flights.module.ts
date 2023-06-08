@@ -12,5 +12,6 @@ import { RouterModule } from '@angular/router';
     MyBookedFlightDetailsComponent,
   ],
   imports: [CommonModule, RouterModule],
+  exports: [MyBookedFlightsComponent],
 })
 export class MyBookedFlightsModule {}

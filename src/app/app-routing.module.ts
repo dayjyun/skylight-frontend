@@ -52,7 +52,7 @@ const routes: Routes = [
     component: EditProfileComponent,
   },
   {
-    path: 'myProfile/my-tickets',
+    path: 'myProfile/tickets/:id',
     component: MyBookedFlightsComponent
   },
   {
