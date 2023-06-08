@@ -7,9 +7,4 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up-button.component.css'],
 })
 export class SignUpButtonComponent {
-  constructor(private router: Router) {}
-
-  signUpPage() {
-    this.router.navigate(['/sign-up']);
-  }
 }
