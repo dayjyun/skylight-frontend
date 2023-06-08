@@ -1,0 +1,29 @@
+a {
+    text-decoration: none;
+}
+
+/*
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.airports-container {
+
+    border: 2px solid red;
+}
+*/
+
+#list-container {
+  height: 50rem;
+  overflow-y: scroll;
+} 
+
+
+
+
+/* .airports-list-container {
+    border: 2px solid green;
+} */

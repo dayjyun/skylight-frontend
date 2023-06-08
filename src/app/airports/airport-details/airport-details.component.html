@@ -1,1 +1,34 @@
-<p>airport-details works!</p>
+<div class="airport-info-container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Airport</h2>
+          <p class="card-text"><strong>Name:</strong> {{ airport.name }}</p>
+          <p class="card-text"><strong>Airport Code:</strong> {{ airport.airportCode }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Location</h2>
+          <p class="card-text"><strong>City:</strong> {{ airport.city }}, {{ airport.state }}</p>
+          <p class="card-text"><strong>Coordinates:</strong> {{ airport.latitude }}, {{ airport.longitude }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title">Map</h2>
+          <div id="map"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

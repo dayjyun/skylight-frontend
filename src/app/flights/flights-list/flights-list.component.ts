@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 import { FlightsService } from '../../services/flights/flights.service';
 
@@ -10,13 +9,12 @@ import { FlightsService } from '../../services/flights/flights.service';
 })
 export class FlightsListComponent implements OnInit {
   flights: any;
-  flight: any;
 
-  constructor(private flightsService: FlightsService, private route: ActivatedRoute) {}
+  constructor(private flightsService: FlightsService) {}
 
   ngOnInit(): void {
-    this.flightsService.getAllFlights().subscribe(data => {
+    this.flightsService.getAllFlights().subscribe((data) => {
       this.flights = data;
-    })
+    });
   }
 }
