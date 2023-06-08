@@ -1,0 +1,8 @@
+.card-container {
+    min-width: 30rem;
+    border: 2px solid red;
+}
+
+@media screen and (max-width: 510px) {
+    
+}
