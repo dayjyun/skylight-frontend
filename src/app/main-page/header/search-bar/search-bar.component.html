@@ -1,32 +1,21 @@
-<div class="search-container">
-  <div class="row d-flex">
-    <div class="col" (input)="(filteredOriginAirports)">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="From"
-        aria-label="From"
-        [(ngModel)]="originSearchBarText"
-      />
-    </div>
-    <div class="col" (input)="(filteredDestinationAirports)">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="Destination"
-        aria-label="Destination"
-        [(ngModel)]="destinationSearchBarText"
-      />
-    </div>
-  </div>
-  <div class="col-12 d-flex align-self-lg-end d-flex justify-content-center">
-    <button
-      type="submit"
-      class="btn btn-primary"
-      (click)="search()"
+<div class="container">
+  <form class="form-inline" (input)="filterAirports()">
+    <input
+      [(ngModel)]="searchBarText"
+      class="form-control mr-sm-2 search-bar"
+      type="search"
+      placeholder="Search for airports..."
+      name="originSearchBarText"
+    />
+  </form>
+  <div class="search-results mt-3" *ngIf="searchBarText.trim()">
+    <a
+      class="list-group-item list-group-item-action"
+      *ngFor="let airport of airports"
+      [routerLink]="['/results', airport.name]"
     >
-      LET'S FLY
-    </button>
+      {{ airport.name }} - {{ airport.airportCode }}
+    </a>
+    <div *ngIf="airports?.length === 0" class="no-results-text alert alert-warning">No results found</div>
   </div>
 </div>
-<!-- display list of cities as user types -->

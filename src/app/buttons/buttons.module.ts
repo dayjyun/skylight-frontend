@@ -10,6 +10,7 @@ import { ScheduledFlightsButtonComponent } from './scheduled-flights-button/sche
 import { MyProfileButtonComponent } from './my-profile-button/my-profile-button.component';
 import { EditMyProfileButtonComponent } from './edit-my-profile-button/edit-my-profile-button.component';
 import { AllFlightsButtonComponent } from './all-flights-button/all-flights-button.component';
+import { AllAirportsButtonComponent } from './all-airports-button/all-airports-button.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AllFlightsButtonComponent } from './all-flights-button/all-flights-butt
     MyProfileButtonComponent,
     EditMyProfileButtonComponent,
     AllFlightsButtonComponent,
+    AllAirportsButtonComponent,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
@@ -34,6 +36,7 @@ import { AllFlightsButtonComponent } from './all-flights-button/all-flights-butt
     MyProfileButtonComponent,
     EditMyProfileButtonComponent,
     AllFlightsButtonComponent,
+    AllAirportsButtonComponent,
   ],
 })
 export class ButtonsModule {}

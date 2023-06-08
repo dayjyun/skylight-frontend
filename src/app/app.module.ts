@@ -18,6 +18,8 @@ import { FlightsService } from './services/flights/flights.service'
 import { TicketsService } from './services/tickets/tickets.service'
 import { UsersService } from './services/users/users.service';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { MyBookedFlightsModule } from './my-booked-flights/my-booked-flights.module';
+import { AirportsModule } from './airports/airports.module';
 
 @NgModule({
   declarations: [AppComponent, PageNotFoundComponent, EditProfileComponent],
@@ -30,9 +32,11 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
     MainPageModule,
     FooterModule,
     FlightsModule,
+    AirportsModule,
     ButtonsModule,
     MyProfileModule,
-    BecomeAPilotModule
+    BecomeAPilotModule,
+    MyBookedFlightsModule,
   ],
   exports: [
     EditProfileComponent

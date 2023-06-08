@@ -1,0 +1,31 @@
+<div data-spy="scroll" class="flights-list-container">
+  <h2 class="mb-4 text-center">Airports</h2>
+  <div data-spy="scroll" id="list-container">
+    <a
+      appATags
+      class="card mb-3 da-cards"
+      style="max-width: 540px"
+      *ngFor="let airport of airports"
+      routerLink="/airports/{{ airport?.id }}"
+    >
+      <div class="row g-0 card-container">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">{{ airport?.name }} Airport</h3>
+            <div
+              class="flights-container d-flex justify-content-evenly align-items-center"
+            >
+              <div class="departures-container">
+                <h4>{{ airport.airportCode }}</h4>
+                <div>
+                  {{ airport.city }},
+                  {{ airport.state }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
