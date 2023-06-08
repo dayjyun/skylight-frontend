@@ -5,11 +5,6 @@
   flex-direction: column;
 }
 
-.flights-container {
-  /* width: 40rem; */
-  border: 2px solid red;
-}
-
 #list-container {
   height: 50rem;
   overflow-y: scroll;

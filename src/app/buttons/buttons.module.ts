@@ -11,6 +11,7 @@ import { MyProfileButtonComponent } from './my-profile-button/my-profile-button.
 import { EditMyProfileButtonComponent } from './edit-my-profile-button/edit-my-profile-button.component';
 import { AllFlightsButtonComponent } from './all-flights-button/all-flights-button.component';
 import { AllAirportsButtonComponent } from './all-airports-button/all-airports-button.component';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { AllAirportsButtonComponent } from './all-airports-button/all-airports-b
     AllFlightsButtonComponent,
     AllAirportsButtonComponent,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, RouterModule],
   exports: [
     LoginButtonComponent,
     SignUpButtonComponent,
