@@ -17,10 +17,10 @@ interface Card {
 export class BecomeAPilotComponent {
   constructor(private router: Router, private usersService: UsersService) {}
 
-  flyTheSkies() {
-    this.usersService.flyTheSkies();
-    this.router.navigate(['/myProfile']);
-  }
+  // flyTheSkies() {
+  //   this.usersService.flyTheSkies();
+  //   this.router.navigate(['/myProfile']);
+  // }
 
   cards: Card[] = [
     {
