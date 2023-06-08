@@ -7,6 +7,39 @@ input {
     padding: 1rem;
 }
 
+.search-bar {
+   width: 20rem;
+   margin: auto;
+   position: relative;
+}
+
+.search-results {
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 20rem;
+  border-top: none;
+}
+
+.search-results a {
+  display: block;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #333;
+  white-space: nowrap;
+}
+
+.results-list:hover {
+  outline: 1px solid #4fa4ff;
+  border-radius: 4px;
+}
+
+
 @media screen and (max-width: 778px) {
     .col {
         margin: .5rem auto;

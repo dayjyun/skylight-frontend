@@ -8,6 +8,7 @@ import { MyProfileComponent } from './my-profile/my-profile/my-profile.component
 import { FlightsComponent } from './flights/flights/flights.component';
 import { BecomeAPilotComponent } from './become-a-pilot/become-a-pilot/become-a-pilot.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ResultsComponent } from './results/results/results.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'flights/:id',
     component: FlightsComponent,
+  },
+  {
+    path: 'results',
+    component: ResultsComponent
   },
   {
     path: 'become-a-pilot',
