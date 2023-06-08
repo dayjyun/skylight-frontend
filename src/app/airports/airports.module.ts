@@ -4,6 +4,7 @@ import { AirportsComponent } from './airports/airports.component';
 import { AirportsListComponent } from './airports-list/airports-list.component';
 import { AirportDetailsComponent } from './airport-details/airport-details.component';
 import { RouterModule } from '@angular/router';
+import { ButtonsModule } from '../buttons/buttons.module';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { RouterModule } from '@angular/router';
     AirportsListComponent,
     AirportDetailsComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, ButtonsModule],
   exports: [AirportsComponent],
 })
 export class AirportsModule {}

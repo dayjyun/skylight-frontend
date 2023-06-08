@@ -16,6 +16,5 @@ export class AirportsListComponent implements OnInit {
     this.airportsService.getAllAirports().subscribe((data) => {
       this.airports = data;
     });
-    console.log(this.airports)
   }
 }
