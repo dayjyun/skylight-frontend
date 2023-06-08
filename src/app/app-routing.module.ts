@@ -18,8 +18,11 @@ const routes: Routes = [
   },
   {
     path: 'airports/:id',
-    component: AirportsComponent,
     children: [
+      {
+        path: "",
+        component: AirportsComponent
+      },
       {
         path: 'flights',
         component: FlightsComponent,
