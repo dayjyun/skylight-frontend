@@ -17,10 +17,6 @@ const routes: Routes = [
     path: '',
     component: MainPageComponent,
   },
-  // {
-  //   path: 'air',
-  //   component: BecomeAPilotComponent,
-  // },
   {
     path: 'airports/:id',
     component: AirportsComponent,
@@ -52,7 +48,7 @@ const routes: Routes = [
     component: EditProfileComponent,
   },
   {
-    path: 'myProfile/tickets/:id',
+    path: 'myProfile/my-tickets',
     component: MyBookedFlightsComponent
   },
   {

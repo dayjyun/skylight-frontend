@@ -1,0 +1,44 @@
+<div data-spy="scroll" class="flights-list-container">
+  <h2 class="mb-4 text-center">My Flights</h2>
+  <div data-spy="scroll" id="list-container">
+    <div
+      appATags
+      class="card mb-3 da-cards"
+      style="max-width: 540px"
+      *ngFor="let flight of flights"
+    >
+      <div class="row g-0 card-container" >
+        <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title">Flight {{ flight.id }}</h3>
+          <div
+            class="flights-container d-flex justify-content-evenly align-items-center"
+          >
+            <div class="departures-container">
+              <h4>From</h4>
+              <h4>{{ flight.flight.originAirport.name }} Airport</h4>
+              <h5>{{ flight.flight.originAirport.airportCode }}</h5>
+              <div>
+                {{ flight.flight.originAirport.city }},
+                {{ flight.flight.originAirport.state }}
+              </div>
+              <div>{{ flight.flight.departureDate }}: {{ flight.flight.departureTime }}</div>
+            </div>
+
+            <div class="arrivals-container">
+              <h4>To</h4>
+              <h4>{{ flight.flight.destinationAirport.name }} Airport</h4>
+              <h5>{{ flight.flight.destinationAirport.airportCode }}</h5>
+              <div>
+                {{ flight.flight.destinationAirport.city }},
+                {{ flight.flight.destinationAirport.state }}
+              </div>
+              <div>{{ flight.flight.arrivalDate }}: {{ flight.flight.arrivalTime }}</div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
