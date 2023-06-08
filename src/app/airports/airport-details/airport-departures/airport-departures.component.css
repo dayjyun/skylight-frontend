@@ -1,0 +1,20 @@
+a {
+  text-decoration: none;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flights-container {
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+#list-container {
+  height: 50rem;
+  overflow-y: scroll;
+}
