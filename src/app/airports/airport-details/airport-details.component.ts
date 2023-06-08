@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
-
+import { AfterViewInit, Component, ElementRef, ViewChild, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { AirportsService } from '../../services/airports/airports.service';
 
 @Component({
@@ -8,8 +7,11 @@ import { AirportsService } from '../../services/airports/airports.service';
   templateUrl: './airport-details.component.html',
   styleUrls: ['./airport-details.component.css'],
 })
-export class AirportDetailsComponent {
+export class AirportDetailsComponent implements OnInit, AfterViewInit {
   airport: any;
+  google: any;
+
+  @ViewChild('mapContainer', { static: false }) mapContainer!: ElementRef;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,7 +25,29 @@ export class AirportDetailsComponent {
         this.airport = data.find((airport: any) => {
           return airport.id === +paramId;
         });
+
+        // Call the initMap function after fetching the airport details
+        this.initMap();
       });
+    });
+  }
+
+  ngAfterViewInit(): void {
+    // No changes required in this function
+  }
+
+  initMap(): void {
+    const mapOptions = {
+      center: { lat: this.airport.latitude, lng: this.airport.longitude },
+      zoom: 12,
+      disableDefaultUI: true, // Optional: Disable default map UI
+    };
+
+    const map = new this.google.maps.Map(this.mapContainer.nativeElement, mapOptions);
+
+    const marker = new this.google.maps.Marker({
+      position: { lat: this.airport.latitude, lng: this.airport.longitude },
+      map: map,
     });
   }
 }
