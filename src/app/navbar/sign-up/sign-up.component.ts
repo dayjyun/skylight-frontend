@@ -8,12 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
+  /**
+   * Holds the registration user data.
+   */
   registerUserData: any = {};
 
+  /**
+   * Holds the error message displayed during registration.
+   */
   errorMessage: string = '';
 
+  /**
+   * Creates an instance of the component.
+   * @param userService - The service used for user registration.
+   * @param router - The router instance for navigation.
+   */
   constructor(private userService: UsersService, private router: Router) {}
 
+  /**
+   * Lifecycle hook that is called after the component is initialized.
+   */
   ngOnInit(): void {}
 
   /**
@@ -33,6 +47,7 @@ export class SignUpComponent implements OnInit {
       return;
     }
 
+    // Redirects user to the login page
     this.userService.createUser(this.registerUserData).subscribe((data) => {
       if (data) this.router.navigate(['/login']);
     });

@@ -8,12 +8,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  /**
+   * Holds the login user data.
+   */
   loginUserData: any = {};
 
+  /**
+   * Holds the error message displayed during login.
+   */
   errorMessage: string = '';
 
+  /**
+   * Creates an instance of the component.
+   * @param userService - The service used for user authentication.
+   * @param router - The router instance for navigation.
+   */
   constructor(private userService: UsersService, private router: Router) {}
 
+  /**
+   * Lifecycle hook that is called after the component is initialized.
+   */
   ngOnInit(): void {}
 
   /**
@@ -31,7 +45,7 @@ export class LoginComponent implements OnInit {
 
     this.userService.loginUser(this.loginUserData).subscribe((data) => {
       if (data) {
-        localStorage.setItem("jwt", data.message);
+        localStorage.setItem('jwt', data.message);
         this.router.navigate(['/myProfile']);
       }
     });
