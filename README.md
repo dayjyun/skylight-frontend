@@ -1,6 +1,31 @@
+# Table Of Contents
+- [SkyLight](#skylight)
+- [Technologies](#technologies)
+- [Features](#features)
+- [Run Application](#run-application)
+- [Approach](#approach)
+- [Website](#erd)
+- [Endpoints](#endpoints)
+    - [User](#user)
+    - [Airports](#airports)
+    - [Flights](#flights)
+    - [Tickets](#tickets)
+- [Future Features](#future-features)
+- [Acknowledgements](#acknowledgements)
+
 [Backend Repo](https://github.com/dayjyun/skylight-backend)
 
 # Technologies
 [AngularJs](https://angularjs.org/)
 [TypeScript](https://www.typescriptlang.org/)
+Git Branching
 [Icons8](https://icons8.com/)
+[FontAwesome](https://fontawesome.com/)
+[AWS](https://aws.amazon.com/)
+[HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+[CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[BootStrap](https://getbootstrap.com/)
+[VSCode](https://code.visualstudio.com/)
+[H2 DataBase](http://h2database.com/html/main.html)
+[Google Maps API](https://developers.google.com/)
+[Google Chrome](https://www.google.com/chrome/bsem/download/en_us/?brand=VDKB&ds_kid=43700052784036214&gclid=625869fee86717a6d6380d7c374ebe7e&gclsrc=3p.ds&utm_source=bing&utm_medium=cpc&utm_campaign=1605158%20%7C%20Chrome%20Win11%20%7C%20DR%20%7C%20ESS01%20%7C%20NA%20%7C%20US%20%7C%20en%20%7C%20Desk%20%7C%20SEM%20%7C%20BKWS%20-%20EXA%20%7C%20Txt%20%7C%20Bing_Top%20KWDS&utm_term=google%20chrome&utm_content=Desk%20%7C%20BKWS%20-%20EXA%20%7C%20Txt_Google%20Chrome_Top%20KWDS&gclid=625869fee86717a6d6380d7c374ebe7e&gclsrc=3p.ds)
