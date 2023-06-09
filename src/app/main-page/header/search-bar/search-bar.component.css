@@ -1,16 +1,17 @@
-input {
-    min-width: 10rem;
+.search-container {
+  width: 20rem;
+  margin: auto;
 }
 
 .col-12 {
-    text-align: center;
-    padding: 1rem;
+  text-align: center;
+  padding: 1rem;
 }
 
 .search-bar {
-   width: 20rem;
-   margin: auto;
-   position: relative;
+  width: 20rem;
+  margin: auto;
+  position: relative;
 }
 
 .search-results {
@@ -22,6 +23,7 @@ input {
   padding: 10px;
   max-height: 200px;
   overflow-y: auto;
+  overflow-x: hidden;
   width: 20rem;
   border-top: none;
 }
@@ -35,7 +37,7 @@ input {
 }
 
 a:active {
-   background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 .results-list:hover {
@@ -43,9 +45,14 @@ a:active {
   border-radius: 4px;
 }
 
+.no-results-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 @media screen and (max-width: 778px) {
-    .col {
-        margin: .5rem auto;
-    }
+  .col {
+    margin: 0.5rem auto;
+  }
 }

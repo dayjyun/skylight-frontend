@@ -1,18 +1,46 @@
 .my-profile-container {
   margin: 0 auto;
-  padding: 6rem 0;
+  padding-top: 6rem;
+  padding-bottom: 1rem;
 }
 
-.row {
+.background-image {
+  background-image: url("https://skylight-project.s3.amazonaws.com/frontend/airplane_transparent.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  width: 80%;
+  position: absolute;
+  z-index: -1;
+  margin-top: -3rem;
+}
+
+h2 {
+  border-bottom: 1px solid lightgray;
+}
+
+.col-md-6 {
   min-width: 30rem;
 }
 
-.profile-details {
-  width: 100%;
+.card-body {
+  height: 18rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 991px) {
+  .col-md-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media screen and (max-width: 510px) {
   .my-profile-container {
-    padding: 10rem 0;
+    padding: 10rem 0 2rem 0;
   }
 }

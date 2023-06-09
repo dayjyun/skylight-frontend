@@ -14,13 +14,10 @@ img {
 }
 
 .text-bg-dark {
-    min-width: 20rem;
+    min-width: 30rem;
+    max-width: 80rem;
 }
 
 .card-img-overlay {
-    /* display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column; */
     margin: 18rem auto;
 }

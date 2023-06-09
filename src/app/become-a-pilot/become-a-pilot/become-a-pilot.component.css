@@ -1,3 +1,7 @@
+.become-a-pilot-container {
+  padding-top: 5rem;
+}
+
 .section-container {
   width: 70%;
   min-width: 20rem;
@@ -19,7 +23,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  .card-title {
+  .card-title,
+  .card-details {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .become-a-pilot-container {
+    padding-top: 8rem;
   }
 }

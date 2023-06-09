@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLinkActive } from '@angular/router';
 
 import { AirportsService } from '../../../services/airports/airports.service';
 

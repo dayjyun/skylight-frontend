@@ -11,6 +11,7 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AirportsComponent } from './airports/airports/airports.component';
 import { MyBookedFlightsComponent } from './my-booked-flights/my-booked-flights/my-booked-flights.component';
 import { AirportFlightsComponent } from './airports/airport-details/airport-flights/airport-flights.component';
+import { MyScheduledFlightsComponent } from './my-profile/my-scheduled-flights/my-scheduled-flights.component';
 
 const routes: Routes = [
   {
@@ -51,8 +52,8 @@ const routes: Routes = [
     component: EditProfileComponent,
   },
   {
-    path: 'myProfile/my-tickets',
-    component: MyBookedFlightsComponent
+    path: 'air',
+    component: MyScheduledFlightsComponent,
   },
   {
     path: 'sign-up',
