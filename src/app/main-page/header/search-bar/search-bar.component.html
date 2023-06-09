@@ -1,4 +1,4 @@
-<div class="container">
+<div class="search-container">
   <form class="form-inline" (input)="filterAirports()">
     <input
       [(ngModel)]="searchBarText"
@@ -8,14 +8,22 @@
       name="originSearchBarText"
     />
   </form>
-  <div class="search-results mt-3" *ngIf="searchBarText.trim()">
+  <div
+    class="search-results mt-1 d-flex flex-column"
+    *ngIf="searchBarText.trim()"
+  >
     <a
-      class="list-group-item list-group-item-action"
+      class="results-list"
       *ngFor="let airport of airports"
       [routerLink]="['/airports', airport.id]"
     >
       {{ airport.name }} - {{ airport.airportCode }}
     </a>
-    <div *ngIf="airports?.length === 0" class="no-results-text alert alert-warning">No results found</div>
+    <div
+      *ngIf="airports?.length === 0"
+      class="no-results-text alert alert-secondary"
+    >
+      No results found
+    </div>
   </div>
 </div>
