@@ -1,0 +1,32 @@
+.edit-container {
+  padding: 8rem 0;
+  margin: 0 auto;
+}
+
+.background-image {
+  background-image: url("https://skylight-project.s3.amazonaws.com/frontend/x-wing_hangar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  width: 80%;
+  position: absolute;
+  z-index: -1;
+  margin-top: 30rem;
+}
+
+.edit-content {
+  width: 80%;
+  opacity: .94;
+}
+
+.row {
+  width: 80%;
+  max-width: 60rem;
+  min-width: 20rem;
+}
+
+@media screen and (max-width: 510px) {
+  .row {
+    padding: 5rem 0;
+  }
+}

@@ -1,25 +1,72 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MainPageComponent } from './main-page/main-page/main-page.component';
+import { SignUpComponent } from './navbar/sign-up/sign-up.component';
+import { LoginComponent } from './navbar/login/login.component';
+import { MyProfileComponent } from './my-profile/my-profile/my-profile.component';
+import { FlightsComponent } from './flights/flights/flights.component';
+import { BecomeAPilotComponent } from './become-a-pilot/become-a-pilot/become-a-pilot.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { AirportsComponent } from './airports/airports/airports.component';
+import { MyBookedFlightsComponent } from './my-booked-flights/my-booked-flights/my-booked-flights.component';
+import { AirportFlightsComponent } from './airports/airport-details/airport-flights/airport-flights.component';
+import { MyScheduledFlightsComponent } from './my-profile/my-scheduled-flights/my-scheduled-flights.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent
+    component: MainPageComponent,
   },
   {
-    path: '',
-    // component: FlightSearchResults
+    path: 'airports/:id',
+    children: [
+      {
+        path: "",
+        component: AirportsComponent
+      },
+      {
+        path: 'flights',
+        component: AirportFlightsComponent,
+      },
+    ],
   },
   {
-    path: "**",
-    component: PageNotFoundComponent
-  }
+    path: 'become-a-pilot',
+    component: BecomeAPilotComponent,
+  },
+  {
+    path: 'flights/:id',
+    component: FlightsComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'myProfile',
+    component: MyProfileComponent,
+  },
+  {
+    path: 'myProfile/edit',
+    component: EditProfileComponent,
+  },
+  {
+    path: 'air',
+    component: MyScheduledFlightsComponent,
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,44 @@
+.sign-up-container {
+  margin: 5rem auto;
+  background-image: url("https://skylight-project.s3.amazonaws.com/frontend/day.jpg");
+  background-size: cover;
+  background-position: center;
+  margin-top: 8rem;
+}
+
+.figure {
+  margin-bottom: 2rem;
+}
+
+.figure-img {
+  max-height: 80%;
+  min-height: 20%;
+}
+
+.figure-caption {
+  color: White;
+  font-weight: bolder;
+  font-size: 24px;
+  text-shadow: 0 5px 10px rgba(0, 0, 0, 0.74);
+  mix-blend-mode: overlay;
+}
+
+.sign-up-content {
+  margin: 3rem auto;
+  width: 80%;
+  min-width: 20rem;
+  max-width: 80rem;
+  opacity: .9;
+}
+
+.login-btn {
+  margin: 2rem 0 -1rem 0;
+  gap: 1rem;
+}
+
+@media screen and (max-width: 510px) {
+
+  .login-btn {
+    flex-direction: column;
+  }
+}

@@ -10,15 +10,15 @@
   color: white;
 }
 
-.fa-brands {
-  padding: 0 0.25rem;
+.fa-solid, .fa-brands {
+  padding: 0 0.5rem;
 }
 
 .fa-user,
 .fa-github,
 .fa-linkedin {
   color: white;
-  font-size: 2rem;
+  font-size: 1.2rem;
 }
 
 .fa-user:hover {

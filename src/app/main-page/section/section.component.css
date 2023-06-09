@@ -1,0 +1,21 @@
+.section-container {
+    width: 70%;
+    min-width: 20rem;
+    margin: 2rem auto;
+}
+
+.card.mb-3 {
+    min-height: 9rem;
+    display: flex;
+    justify-content: center;
+}
+
+.img-fluid {
+    width: 5rem;
+}
+
+@media screen and (max-width: 767px) {
+    .card-title, .card-text {
+        text-align: center;
+    }
+}

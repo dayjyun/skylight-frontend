@@ -1,9 +1,13 @@
-<nav class="navbar bg-body-tertiary bg-primary-subtle">
+<nav class="navbar bg-body-tertiary bg-dark-subtle shadow-sm">
   <div class="container-fluid d-flex justify-content-between">
     <app-logo></app-logo>
-    <div class="session-containers d-flex justify-content-evenly align-items-center">
-      <app-login></app-login>
-      <app-sign-up></app-sign-up>
+    <div
+      class="session-containers d-flex justify-content-evenly align-items-center"
+    >
+      <app-login-button *ngIf="!isLoggedIn()"></app-login-button>
+      <app-sign-up-button *ngIf="!isLoggedIn()"></app-sign-up-button>
+      <app-my-profile-button *ngIf="isLoggedIn()"></app-my-profile-button>
+      <app-logout-button *ngIf="isLoggedIn()" (click)="logout()"></app-logout-button>
     </div>
   </div>
 </nav>

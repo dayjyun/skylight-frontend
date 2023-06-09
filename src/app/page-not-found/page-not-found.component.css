@@ -1,3 +1,9 @@
 .not-found-container {
-    padding: 5rem;
+  margin: auto;
+  margin-top: 8rem;
+}
+
+.page-not-found-text {
+  text-align: center;
+  text-transform: capitalize;
 }

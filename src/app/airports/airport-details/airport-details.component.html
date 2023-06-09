@@ -1,0 +1,35 @@
+<div class="airport-info-container card mb-3">
+  <h2 class="mb-4 text-center">Details</h2>
+  <div
+    #mapContainer
+    class="card-img-top"
+  ></div>
+  <div class="card-body" *ngIf="airport">
+    <h5 class="card-title">{{ airport.name }} Airport</h5>
+    <p class="card-text">{{ airport.description }}</p>
+    <ul class="list-group">
+      <li class="list-group-item">
+        <strong>Airport Code:</strong> {{ airport.airportCode }}
+      </li>
+      <li class="list-group-item"><strong>City:</strong> {{ airport.city }}</li>
+      <li class="list-group-item">
+        <strong>State:</strong> {{ airport.state }}
+      </li>
+      <li class="list-group-item">
+        <strong>Latitude:</strong> {{ airport.latitude }}
+      </li>
+      <li class="list-group-item">
+        <strong>Longitude:</strong> {{ airport.longitude }}
+      </li>
+    </ul>
+    <div class="pt-3">
+      <button
+        type="button"
+        class="btn btn-success"
+        routerLink="/airports/{{ airport.id }}/flights"
+      >
+        Flights
+      </button>
+    </div>
+  </div>
+</div>

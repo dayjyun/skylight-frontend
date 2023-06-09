@@ -1,0 +1,13 @@
+.airport-flights-container {
+    gap: 2rem;
+    padding-top: 8rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .airport-flights-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

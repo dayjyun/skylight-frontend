@@ -1,0 +1,24 @@
+a {
+    text-decoration: none;
+}
+
+.flights-list-container {
+    border: 2px solid green;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flights-container {
+    /* width: 40rem; */
+    border: 2px solid red;
+}
+
+#list-container {
+  height: 50rem;
+  overflow-y: scroll;
+}

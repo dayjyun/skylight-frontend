@@ -1,0 +1,35 @@
+<div class="become-a-pilot-container">
+  <app-pilot-carousel></app-pilot-carousel>
+
+  <div class="section-container">
+    <div class="card mb-3" *ngFor="let card of cards">
+      <div class="row g-0">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <img
+            src="{{ card.img }}"
+            class="img-fluid rounded-start"
+            alt="{{ card.title }}"
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ card.title }}</h5>
+            <p class="card-text">
+              {{ card.details }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="loading-container">
+      <button class="btn btn-primary" type="button" disabled>
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Pilot License Loading...
+      </button>
+    </div>
+  </div>
+</div>

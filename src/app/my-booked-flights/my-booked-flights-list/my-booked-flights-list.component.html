@@ -1,0 +1,60 @@
+<div
+ *ngIf="flights && flights.length > 0; else noFlights"
+  data-spy="scroll"
+  class="flights-list-container d-flex flex-column justify-content-center align-items-center"
+>
+  <h2 class="mb-4 text-center">My Flights</h2>
+  <div data-spy="scroll" id="list-container">
+    <div
+      appATags
+      class="card mb-3 da-cards"
+      *ngFor="let flight of flights.slice().reverse()"
+    >
+      <div class="row g-0 card-container">
+        <div class="col-md-8">
+          <div class="card-body">
+            <h3 class="card-title">
+              <em>Flight {{ flight.id }}</em>
+            </h3>
+            <div class="flights-container">
+              <div class="departures-container">
+                <h6>From</h6>
+                <h4>{{ flight.flight.originAirport.name }} Airport</h4>
+                <h5>{{ flight.flight.originAirport.airportCode }}</h5>
+                <div>
+                  {{ flight.flight.originAirport.city }},
+                  {{ flight.flight.originAirport.state }}
+                </div>
+                <div>{{ flight.flight.departureDate }}</div>
+                <div>{{ flight.flight.departureTime }} CST</div>
+              </div>
+
+              <div class="arrivals-container">
+                <h6>To</h6>
+                <h4>{{ flight.flight.destinationAirport.name }} Airport</h4>
+                <h5>{{ flight.flight.destinationAirport.airportCode }}</h5>
+                <div>
+                  {{ flight.flight.destinationAirport.city }},
+                  {{ flight.flight.destinationAirport.state }}
+                </div>
+                <div>{{ flight.flight.arrivalDate }}</div>
+                <div>{{ flight.flight.arrivalTime }} CST</div>
+              </div>
+              <div>
+                <img
+                  src="https://skylight-project.s3.amazonaws.com/frontend/skylight-qr-code.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noFlights>
+  <div class="no-flights-message">
+    No flights available.
+  </div>
+</ng-template>

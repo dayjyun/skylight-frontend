@@ -1,0 +1,55 @@
+<div
+  *ngIf="departures && departures.length > 0; else noFlights"
+  data-spy="scroll"
+  class="flights-list-container"
+>
+  <h2 class="mb-4 text-center">Departing Flights</h2>
+  <div data-spy="scroll" id="list-container">
+    <div
+      appATags
+      class="card mb-3 da-cards"
+      style="max-width: 540px"
+      *ngFor="let departureFlight of departures"
+    >
+      <div class="row g-0 card-container">
+        <div class="card-body">
+          <h3 class="card-title">Flight {{ departureFlight.id }}</h3>
+          <div
+            class="flights-container d-flex justify-content-evenly align-items-center"
+          >
+            <div class="departures-container">
+              <h4>From</h4>
+              <h4>{{ departureFlight.originAirport.name }} Airport</h4>
+              <h5>{{ departureFlight.originAirport.airportCode }}</h5>
+              <div>
+                {{ departureFlight.originAirport.city }},
+                {{ departureFlight.originAirport.state }}
+              </div>
+              <div>
+                {{ departureFlight.departureDate }}:
+                {{ departureFlight.departureTime }}
+              </div>
+            </div>
+
+            <div class="arrivals-container">
+              <h4>To</h4>
+              <h4>{{ departureFlight.destinationAirport.name }} Airport</h4>
+              <h5>{{ departureFlight.destinationAirport.airportCode }}</h5>
+              <div>
+                {{ departureFlight.destinationAirport.city }},
+                {{ departureFlight.destinationAirport.state }}
+              </div>
+              <div>
+                {{ departureFlight.arrivalDate }}:
+                {{ departureFlight.arrivalTime }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #noFlights>
+  <div class="no-flights-message">No departing flights available.</div>
+</ng-template>

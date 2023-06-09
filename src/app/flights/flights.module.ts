@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TicketInfoComponent } from './ticket-info/ticket-info.component';
-import { TicketsListComponent } from './tickets-list/tickets-list.component';
-
-
+import { FlightsComponent } from './flights/flights.component';
+import { FlightsListComponent } from './flights-list/flights-list.component';
+import { FlightDetailsComponent } from './flight-details/flight-details.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    TicketsListComponent,
-    TicketInfoComponent
+    FlightsComponent,
+    FlightsListComponent,
+    FlightDetailsComponent,
   ],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule, RouterModule],
 })
-export class FlightsModule { }
+export class FlightsModule {}
