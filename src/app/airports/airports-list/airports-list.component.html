@@ -1,4 +1,4 @@
-<div data-spy="scroll" class="flights-list-container">
+<div data-spy="scroll" class="airports-list-container">
   <h2 class="mb-4 text-center">Airports</h2>
   <div data-spy="scroll" id="list-container">
     <a
@@ -10,20 +10,11 @@
       ngClass="isActive"
     >
       <div class="row g-0 card-container">
-        <div class="col-md-8">
-          <div class="card-body">
-            <h3 class="card-title">{{ airport?.name }} Airport</h3>
-            <div
-              class="flights-container d-flex justify-content-evenly align-items-center"
-            >
-              <div class="departures-container">
-                <h4>{{ airport.airportCode }}</h4>
-                <div>
-                  {{ airport.city }},
-                  {{ airport.state }}
-                </div>
-              </div>
-            </div>
+        <div class="card-body d-flex justify-content-center align-items-start flex-column">
+          <h2 class="card-title">{{ airport?.name }} Airport</h2>
+          <div>
+            {{ airport.city }},
+            {{ airport.state }}
           </div>
         </div>
       </div>

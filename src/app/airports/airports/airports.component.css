@@ -1,4 +1,7 @@
 .airports-container {
-    padding: 8rem;
+    padding-top: 8rem;
+    padding-bottom: 3rem;
     margin: 0 auto;
+    width: 80%;
+    max-width: 100rem;
 }

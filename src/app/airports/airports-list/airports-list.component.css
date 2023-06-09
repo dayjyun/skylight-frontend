@@ -1,29 +1,14 @@
-a {
-    text-decoration: none;
-}
-
-/*
-.card-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.airports-container {
-
-    border: 2px solid red;
-}
-*/
-
 #list-container {
   height: 52rem;
   overflow-y: scroll;
 }
 
+a {
+  text-decoration: none;
+}
 
-
-
-/* .airports-list-container {
-    border: 2px solid green;
-} */
+.card-body {
+  min-height: 8rem;
+  min-width: 20rem;
+  max-width: 30rem;
+}
