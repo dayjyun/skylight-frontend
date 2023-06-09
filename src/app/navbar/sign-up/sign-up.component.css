@@ -3,6 +3,7 @@
   background-image: url("https://skylight-project.s3.amazonaws.com/frontend/day.jpg");
   background-size: cover;
   background-position: center;
+  margin-top: 8rem;
 }
 
 .figure {
@@ -27,6 +28,7 @@
   width: 80%;
   min-width: 20rem;
   max-width: 80rem;
+  opacity: .9;
 }
 
 .login-btn {
