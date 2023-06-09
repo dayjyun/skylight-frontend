@@ -18,3 +18,8 @@ a {
   height: 50rem;
   overflow-y: scroll;
 }
+
+.no-flights-message {
+  margin: 0 auto;
+  padding: 8rem;
+}

@@ -1,4 +1,8 @@
-<div data-spy="scroll" class="flights-list-container">
+<div
+  *ngIf="departures && departures.length > 0; else noFlights"
+  data-spy="scroll"
+  class="flights-list-container"
+>
   <h2 class="mb-4 text-center">Departing Flights</h2>
   <div data-spy="scroll" id="list-container">
     <div
@@ -21,7 +25,10 @@
                 {{ departureFlight.originAirport.city }},
                 {{ departureFlight.originAirport.state }}
               </div>
-              <div>{{ departureFlight.departureDate }}: {{ departureFlight.departureTime }}</div>
+              <div>
+                {{ departureFlight.departureDate }}:
+                {{ departureFlight.departureTime }}
+              </div>
             </div>
 
             <div class="arrivals-container">
@@ -32,7 +39,10 @@
                 {{ departureFlight.destinationAirport.city }},
                 {{ departureFlight.destinationAirport.state }}
               </div>
-              <div>{{ departureFlight.arrivalDate }}: {{ departureFlight.arrivalTime }}</div>
+              <div>
+                {{ departureFlight.arrivalDate }}:
+                {{ departureFlight.arrivalTime }}
+              </div>
             </div>
           </div>
         </div>
@@ -40,3 +50,6 @@
     </div>
   </div>
 </div>
+<ng-template #noFlights>
+  <div class="no-flights-message">No departing flights available.</div>
+</ng-template>

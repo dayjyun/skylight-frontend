@@ -4,6 +4,17 @@
   padding-bottom: 1rem;
 }
 
+.background-image {
+  background-image: url("https://skylight-project.s3.amazonaws.com/frontend/airplane_gif.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  width: 80%;
+  position: absolute;
+  z-index: -1;
+  margin-top: -3rem;
+}
+
 h2 {
   border-bottom: 1px solid lightgray;
 }

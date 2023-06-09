@@ -1,4 +1,5 @@
 <div
+ *ngIf="flights && flights.length > 0; else noFlights"
   data-spy="scroll"
   class="flights-list-container d-flex flex-column justify-content-center align-items-center"
 >
@@ -52,3 +53,8 @@
     </div>
   </div>
 </div>
+<ng-template #noFlights>
+  <div class="no-flights-message">
+    No flights available.
+  </div>
+</ng-template>

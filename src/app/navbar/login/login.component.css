@@ -11,7 +11,7 @@
   background-image: url("https://skylight-project.s3.amazonaws.com/frontend/landing_g.gif");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70rem;
+  height: 100vh;
   width: 40rem;
   position: absolute;
   z-index: -1;
