@@ -3,6 +3,10 @@
   overflow-y: scroll;
 }
 
+.da-cards {
+  margin: 0 1.2rem;
+}
+
 a {
   text-decoration: none;
 }

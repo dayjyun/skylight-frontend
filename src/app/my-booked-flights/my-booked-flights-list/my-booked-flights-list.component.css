@@ -1,8 +1,55 @@
-.card-container {
-    min-width: 30rem;
-    border: 2px solid red;
+#list-container {
+  height: 36rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.flights-list-container {
+  padding-bottom: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.da-cards {
+  margin: 0 2rem;
+}
+
+.row {
+  width: 150%;
+}
+
+/* .card-body {
+  display: flex;
+} */
+
+.flights-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.departures-container,
+.arrivals-container {
+  padding: 0 1rem;
+}
+
+img {
+  height: 150px;
+}
+
+@media screen and (max-width: 800px) {
+  .flights-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    flex-direction: column;
+  }
+  .departures-container,
+  .arrivals-container {
+    padding: 1rem 0;
+  }
 }
 
 @media screen and (max-width: 510px) {
-    
 }
