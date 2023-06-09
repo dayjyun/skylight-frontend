@@ -19,10 +19,6 @@
   width: 150%;
 }
 
-/* .card-body {
-  display: flex;
-} */
-
 .flights-container {
   display: flex;
   justify-content: space-between;
