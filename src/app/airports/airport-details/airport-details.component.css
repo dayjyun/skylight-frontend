@@ -1,3 +1,13 @@
+#list-container {
+  max-height: 50rem;
+  overflow-y: scroll;
+}
+
+.card-img-top {
+  height: 30rem;
+  width: 30rem;
+}
+
 .card-body {
   display: flex;
   justify-content: center;
@@ -5,7 +15,6 @@
   flex-direction: column;
 }
 
-#list-container {
-  height: 50rem;
-  overflow-y: scroll;
+.list-group {
+  width: 25rem;
 }

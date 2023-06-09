@@ -1,7 +1,22 @@
-.airports-container {
-    padding-top: 8rem;
-    padding-bottom: 3rem;
-    margin: 0 auto;
-    width: 80%;
-    max-width: 100rem;
+.airports-info-container {
+  padding-top: 8rem;
+  padding-bottom: 3rem;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 100rem;
+}
+
+@media screen and (max-width: 900px) {
+  .airports-info-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 510) {
+  .airports-info-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 10rem;
+  }
 }
