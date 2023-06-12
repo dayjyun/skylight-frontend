@@ -14,8 +14,9 @@
       <div class="row g-0 card-container">
         <div class="col-md-8">
           <div class="card-body">
-            <h3 class="card-title">
+            <h3 class="card-title d-flex justify-content-between">
               <em>Flight {{ flight.id }}</em>
+              <button title="Delete Flight" type="button" class="btn btn-danger" (click)="deleteFlight(flight?.id)">X</button>
             </h3>
             <div class="flights-container">
               <div class="departures-container">
