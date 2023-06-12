@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightsService } from 'src/app/services/flights/flights.service';
 import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class MyScheduledFlightsComponent implements OnInit {
    * Creates an instance of FlightComponent.
    * @param usersService - The service used for retrieving user tickets.
    */
-  constructor(private usersService: UsersService) {}
+  constructor(private usersService: UsersService, private flightsService: FlightsService) {}
 
   /**
    * Lifecycle hook that is called after the component is initialized.
@@ -26,5 +27,11 @@ export class MyScheduledFlightsComponent implements OnInit {
     this.usersService.getScheduledFlights().subscribe((data) => {
       this.flights = data;
     });
+  }
+
+  deleteFlight(flightId: number): void {
+    this.flightsService.deleteFlightById(+flightId).subscribe((data: any) => {
+      this.flights = this.flights.filter((flight: any) => flight.id !== flightId);
+    })
   }
 }

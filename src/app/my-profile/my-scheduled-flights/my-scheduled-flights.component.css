@@ -4,6 +4,10 @@
   overflow-x: hidden;
 }
 
+.no-flights-message {
+  padding: 8rem;
+}
+
 .flights-list-container {
   padding-bottom: 1.2rem;
   display: flex;
