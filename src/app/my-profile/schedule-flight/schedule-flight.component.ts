@@ -8,13 +8,29 @@ import { AirportsService } from 'src/app/services/airports/airports.service';
   styleUrls: ['./schedule-flight.component.css'],
 })
 export class ScheduleFlightComponent implements OnInit {
+  /**
+   * Represents airport object.
+   */
   airportData: any;
+  /**
+   * Represents the selected origin airport from the dropdown.
+   */
   originAirportSelect: any;
+  /**
+   * Represents the selected destination airport from the dropdown.
+   */
   destinationAirportSelect: any;
-  destinationData: any = {};
+  /**
+   * Represents the origin airport data.
+   */
   originAirportData: any = {};
-
-  destinationAirportData: any = {};
+  /**
+   * Represents the destination airport data.
+   */
+  destinationData: any = {};
+  /**
+   * Represents flight data.
+   */
   flightData: any = {};
 
   constructor(
@@ -22,17 +38,25 @@ export class ScheduleFlightComponent implements OnInit {
     private router: Router
   ) {}
 
+  /**
+   * Initializes the component with all the airport data.
+   */
   ngOnInit(): void {
     this.getAllAirports();
   }
-
+  /**
+   * Retrieves all airports and assigns the airport data
+   */
   getAllAirports(): void {
     this.airportsService.getAllAirports().subscribe((data: any) => {
       this.airportData = data;
     });
   }
-
-  saveOriginAirportSelect(airport: any) {
+  /**
+   * Saves the selected origin airport from the dropdown.
+   * @param airport - The selected origin airport.
+   */
+  saveOriginAirportSelect(airport: any): void {
     this.airportsService
       .getAirportById(airport.target.value)
       .subscribe((data: any) => {
@@ -40,7 +64,11 @@ export class ScheduleFlightComponent implements OnInit {
       });
   }
 
-  saveDestinationAirportSelect(airport: any) {
+  /**
+   * Saves the selected destination airport from the dropdown.
+   * @param airport - The selected destination airport.
+   */
+  saveDestinationAirportSelect(airport: any): void {
     this.airportsService
       .getAirportById(airport.target.value)
       .subscribe((data: any) => {
@@ -48,10 +76,18 @@ export class ScheduleFlightComponent implements OnInit {
       });
   }
 
-  createFlight() {
-    this.airportsService.createFlight(this.originAirportSelect.airportCode, this.destinationAirportSelect.airportCode, this.flightData)
+  /**
+   * Creates a new flight by calling the airport service
+   */
+  createFlight(): void {
+    this.airportsService
+      .createFlight(
+        this.originAirportSelect.airportCode,
+        this.destinationAirportSelect.airportCode,
+        this.flightData
+      )
       .subscribe((data: any) => {
-        this.router.navigate(['/air'])
+        this.router.navigate(['/air']);
       });
   }
 }
