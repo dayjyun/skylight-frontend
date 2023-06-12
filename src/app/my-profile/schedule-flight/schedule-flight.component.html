@@ -1,39 +1,46 @@
 <div
   class="schedule-flight-container d-flex justify-content-center align-items-center flex-column"
 >
-  <h1 class="display-1">Explore A New Sky Today</h1>
+  <h1 class="display-1">Explore A New Sky</h1>
   <form
     action=""
     class="row g-3 form"
-    #airport="ngForm"
+    #flight="ngForm"
     (ngSubmit)="createFlight()"
   >
-    <label class="col-sm-2" name="airport name">Airport</label>
-    <div class="col-sm-10">
-      <select
-        name="airport"
-        class="form-control"
-        (change)="saveOriginAirportSelect($event)"
-      >
-        <option id="airport-select">Airport</option>
-        <option
-          *ngFor="let airport of airportData"
-          name="airport.name"
-          [value]=" airport.id"
-          [(ngModel)]="airport.airportCode"
-        >
-          {{ airport.name }} - {{ airport.airportCode }}
-        </option>
-      </select>
-    </div>
+  <!-- Origin -->
+    <h2>Origin</h2>
     <div class="col-md-6">
-      <label for="airplane" class="form-label">Airplane </label>
+      <label for="airplane" class="form-label">Airplane</label>
       <input
         type="text"
         class="form-control"
         name="airplane"
         [(ngModel)]="flightData.airplane"
       />
+    </div>
+    <div>
+      <div class="input-fields d-flex flex-column">
+        <label for="airport" class="col-sm-2" name="airport name">Airport</label>
+
+        <div class="col-sm-10">
+          <select
+            name="airport"
+            class="form-control"
+            (change)="saveOriginAirportSelect($event)"
+          >
+            <option id="airport-select">Airport</option>
+            <option
+              *ngFor="let airport of airportData"
+              name="airport.name"
+              [value]="airport.id"
+              [(ngModel)]="airport.airportCode"
+            >
+              {{ airport.name }} - {{ airport.airportCode }}
+            </option>
+          </select>
+        </div>
+      </div>
     </div>
     <div class="col-md-6">
       <label for="departureDate" class="form-label"
@@ -58,23 +65,28 @@
       />
     </div>
     <!-- Destination -->
-    <label class="col-sm-2" name="airport name">Airport</label>
-    <div class="col-sm-10">
-      <select
-        name="airport"
-        class="form-control"
-        (change)="saveDestinationAirportSelect($event)"
-      >
-        <option id="airport-select">Airport</option>
-        <option
-          *ngFor="let airport of airportData"
-          name="airport.name"
-          [value]=" airport.id"
-          [(ngModel)]="airport.airportCode"
-        >
-          {{ airport.name }} - {{ airport.airportCode }}
-        </option>
-      </select>
+    <h2>Destination</h2>
+    <div>
+        <div class="input-fields d-flex flex-column">
+          <label class="col-sm-2" name="airport name">Airport</label>
+          <div class="col-sm-10">
+            <select
+              name="airport"
+              class="form-control"
+              (change)="saveDestinationAirportSelect($event)"
+            >
+              <option id="airport-select">Airport</option>
+              <option
+                *ngFor="let airport of airportData"
+                name="airport.name"
+                [value]="airport.id"
+                [(ngModel)]="airport.airportCode"
+              >
+                {{ airport.name }} - {{ airport.airportCode }}
+              </option>
+            </select>
+          </div>
+    </div>
     </div>
     <div class="col-md-6">
       <label for="arrivalDate" class="form-label"
@@ -99,7 +111,7 @@
       />
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Schedule Flight</button>
+      <button type="submit" class="btn btn-primary" [disabled]="flight.invalid">Schedule Flight</button>
     </div>
   </form>
 </div>
