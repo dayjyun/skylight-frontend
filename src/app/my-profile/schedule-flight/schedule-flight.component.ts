@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AirportsService } from 'src/app/services/airports/airports.service';
-import { UsersService } from 'src/app/services/users/users.service';
 
 @Component({
   selector: 'app-schedule-flight',
@@ -12,19 +11,14 @@ export class ScheduleFlightComponent implements OnInit {
   airportData: any;
   originAirportSelect: any;
   destinationAirportSelect: any;
-  // ticketId: any;
-  originData: any = {};
   destinationData: any = {};
-
   originAirportData: any = {};
 
   destinationAirportData: any = {};
-
   flightData: any = {};
 
   constructor(
     private airportsService: AirportsService,
-    private userService: UsersService,
     private router: Router
   ) {}
 
@@ -53,24 +47,6 @@ export class ScheduleFlightComponent implements OnInit {
         this.destinationAirportSelect = data;
       });
   }
-
-  // scheduleFlight() {
-  //   this.airportsService.createFlightOrigin(
-  //     this.originAirportSelect.airportCode,
-  //     this.originData
-  //   );
-  //   this.airportsService
-  //     .createFlightDestination(
-  //       this.destinationAirportSelect.airportCode,
-  //       this.destinationData
-  //     )
-  //     .subscribe((data: any) => {
-  //       this.ticketId = data.id;
-  //       this.airportData.push(data);
-  //       this.userService.getScheduledFlights();
-  //       this.router.navigate(['/air']);
-  //     });
-  // }
 
   createFlight() {
     this.airportsService.createFlight(this.originAirportSelect.airportCode, this.destinationAirportSelect.airportCode, this.flightData)
