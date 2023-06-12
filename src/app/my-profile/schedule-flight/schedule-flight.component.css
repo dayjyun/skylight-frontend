@@ -1,0 +1,9 @@
+.schedule-flight-container {
+    padding: 8rem 10rem;
+    margin: 0 auto;
+}
+
+.input-fields {
+    gap: .5rem;
+    width: 29.5rem;
+}

@@ -12,6 +12,7 @@ import { AirportsComponent } from './airports/airports/airports.component';
 import { MyBookedFlightsComponent } from './my-booked-flights/my-booked-flights/my-booked-flights.component';
 import { AirportFlightsComponent } from './airports/airport-details/airport-flights/airport-flights.component';
 import { MyScheduledFlightsComponent } from './my-profile/my-scheduled-flights/my-scheduled-flights.component';
+import { ScheduleFlightComponent } from './my-profile/schedule-flight/schedule-flight.component';
 
 const routes: Routes = [
   {
@@ -19,11 +20,15 @@ const routes: Routes = [
     component: MainPageComponent,
   },
   {
+    path: 'air',
+    component: MyScheduledFlightsComponent,
+  },
+  {
     path: 'airports/:id',
     children: [
       {
-        path: "",
-        component: AirportsComponent
+        path: '',
+        component: AirportsComponent,
       },
       {
         path: 'flights',
@@ -52,8 +57,8 @@ const routes: Routes = [
     component: EditProfileComponent,
   },
   {
-    path: 'air',
-    component: MyScheduledFlightsComponent,
+    path: 'air/schedule',
+    component: ScheduleFlightComponent
   },
   {
     path: 'sign-up',

@@ -49,7 +49,8 @@ export class AirportsService {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
     return this.http.post(
-      `http://localhost:8080/api/airports/code/${airportCode}/origin`, departingFlight,
+      `http://localhost:8080/api/airports/code/${airportCode}/origin`,
+      departingFlight,
       { headers }
     );
   }
@@ -65,7 +66,23 @@ export class AirportsService {
     const jwt = localStorage.getItem('jwt');
     const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
     return this.http.post(
-      `http://localhost:8080/api/airports/code/${airportCode}/destination`, arrivingFlight, { headers }
+      `http://localhost:8080/api/airports/code/${airportCode}/destination`,
+      arrivingFlight,
+      { headers }
+    );
+  }
+
+  createFlight(
+    originAirportCode: string,
+    destinationAirportCode: string,
+    flightData: any
+  ) {
+    const jwt = localStorage.getItem('jwt');
+    const headers = new HttpHeaders({ Authorization: `Bearer ${jwt}` });
+    console.log(flightData)
+    return this.http.post(
+      `http://localhost:8080/api/airports/code/${originAirportCode}/${destinationAirportCode}`, flightData,
+      { headers }
     );
   }
 
