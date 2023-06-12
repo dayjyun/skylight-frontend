@@ -29,6 +29,10 @@ export class MyScheduledFlightsComponent implements OnInit {
     });
   }
 
+  /**
+   * Deletes flight data by using the flight ID
+   * @param flightId - The target flight to delete
+   */
   deleteFlight(flightId: number): void {
     this.flightsService.deleteFlightById(+flightId).subscribe((data: any) => {
       this.flights = this.flights.filter((flight: any) => flight.id !== flightId);
