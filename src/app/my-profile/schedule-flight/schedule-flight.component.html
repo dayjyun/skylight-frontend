@@ -5,13 +5,13 @@
   <form
     action=""
     class="row g-3 form"
-    #airport="ngForm"
+    #flight="ngForm"
     (ngSubmit)="createFlight()"
   >
   <!-- Origin -->
     <h2>Origin</h2>
     <div class="col-md-6">
-      <label for="airplane" class="form-label">Airplane </label>
+      <label for="airplane" class="form-label">Airplane</label>
       <input
         type="text"
         class="form-control"
@@ -21,7 +21,8 @@
     </div>
     <div>
       <div class="input-fields d-flex flex-column">
-        <label class="col-sm-2" name="airport name">Airport</label>
+        <label for="airport" class="col-sm-2" name="airport name">Airport</label>
+
         <div class="col-sm-10">
           <select
             name="airport"
@@ -110,7 +111,7 @@
       />
     </div>
     <div class="col-12">
-      <button type="submit" class="btn btn-primary">Schedule Flight</button>
+      <button type="submit" class="btn btn-primary" [disabled]="flight.invalid">Schedule Flight</button>
     </div>
   </form>
 </div>
