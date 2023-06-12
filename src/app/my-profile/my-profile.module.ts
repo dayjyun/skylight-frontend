@@ -5,6 +5,8 @@ import { MyScheduledFlightsComponent } from './my-scheduled-flights/my-scheduled
 import { ButtonsModule } from '../buttons/buttons.module';
 import { MyBookedFlightsModule } from '../my-booked-flights/my-booked-flights.module';
 import { ScheduleFlightComponent } from './schedule-flight/schedule-flight.component';
+import { FormsModule } from '@angular/forms';
+import { AirportsService } from '../services/airports/airports.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,11 @@ import { ScheduleFlightComponent } from './schedule-flight/schedule-flight.compo
     CommonModule,
     ButtonsModule,
     MyBookedFlightsModule,
+    FormsModule,
   ],
   exports: [
     ScheduleFlightComponent
-  ]
+  ],
+  providers: [AirportsService]
 })
 export class MyProfileModule { }
