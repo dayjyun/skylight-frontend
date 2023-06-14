@@ -17,7 +17,10 @@ export class MyScheduledFlightsComponent implements OnInit {
    * Creates an instance of FlightComponent.
    * @param usersService - The service used for retrieving user tickets.
    */
-  constructor(private usersService: UsersService, private flightsService: FlightsService) {}
+  constructor(
+    private usersService: UsersService,
+    private flightsService: FlightsService
+  ) {}
 
   /**
    * Lifecycle hook that is called after the component is initialized.
@@ -35,7 +38,9 @@ export class MyScheduledFlightsComponent implements OnInit {
    */
   deleteFlight(flightId: number): void {
     this.flightsService.deleteFlightById(+flightId).subscribe((data: any) => {
-      this.flights = this.flights.filter((flight: any) => flight.id !== flightId);
-    })
+      this.flights = this.flights.filter(
+        (flight: any) => flight.id !== flightId
+      );
+    });
   }
 }
